@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+
+</head>
+<body>
+    <div>
+        <h1 class="center">Cotiza Criptomonedas al Instante</h1>
+    </div>
+    <div class="container contenido-principal">
+    	<form>
+    		<div>
+				<label>Moneda</label>
+								<br>
+				<select id="moneda">
+					<option value="" disabled selected>Elige tu Moneda </option>
+					<option value="USD">Dolar Estadounidense</option>
+					<option value="MXN">Peso Mexicano</option>
+					<option value="GBP">Libras</option>
+					<option value="EUR">Euros</option>
+				</select>
+			</div>
+			<div>
+				<br>
+				<br>
+				<br>
+				<label>Criptomoneda</label>
+								<br>
+				<select id="criptomoneda">
+	
+				<option value="" disabled selected>Elige Criptomoneda</option>
+					 <option value="BIT">BTCBitcoin</option>
+					<option value="ETH">ETHEthereum</option>
+					<option value="BNB">BNBBinance Coin</option>
+					<option value="ADA">ADACardano</option>
+				</select>
+			</div>
+    	</form>
+        <!-- Page Content goes here -->
+
+                            <button class="btn waves-effect waves-light orange darken-3"  onclick="convertir()"  name="action">Cotizar
+                                <i class="material-icons right">attach_money</i>
+                            </button>
+
+                        <div id="resultado" class="col s12">
+                        	<textarea id="resultado_conversion">Aqui veremos el resultado</textarea>
+                        </div>
+                  
+
+  </div>
+
+    <script>
+    function convertir() {           
+	    //Leer la moneda seleccionada
+	    var monedaSelect = document.getElementById('moneda');
+	    var monedaSeleccionada = monedaSelect.value;
+		
+	
+	    //Leer la criptomoneda seleccionada
+	    var criptoMonedaSelect = document.getElementById('criptomoneda');
+	    var criptoMonedaSeleccionada = criptoMonedaSelect.value;
+	
+	    //Comprobar que ambos campos tengan datos
+	    if(monedaSeleccionada === '' || criptoMonedaSeleccionada === '') {
+	       alert('Ambos campos son obligatorios', 'deep-orange darken-4 card-panel');
+	    }
+	    else
+	    {
+			switch(monedaSeleccionada) {
+			    case 'USD':
+			     //Conversiones para el dolar usad la tabla
+			    
+				//    BTCBitcoin --->	$57,895.
+				//	ETHEthereum --->	$3,650.49
+				//	BNBBinance Coin --->	$469.34
+				//	ADACardano	 ---> $2.17
+				//Solicitar el usuario su nombre 
+				var nombre = prompt("introduce tu nombre");
+				//Solicitar el usuario el importe a emplear
+				var importe = parseFloat(prompt("introduce el importe"));
+				//Numero de monedas que compro
+				var Numero_de_monedas = 0.1;
+				var coste_cripto = 0.1;
+				//Calcular la conversion a la criptomoneda seleccionada (recordar que puede seleccionar entre vavias)
+				switch(criptoMonedaSeleccionada) {
+			    case 'BIT':
+			    	coste_cripto = 57.895;
+			    	Numero_de_monedas = (importe/coste_cripto);
+			    break;
+			   	case 'ETH':
+			    	coste_cripto = 3650.49;
+			    	Numero_de_monedas = (importe/coste_cripto);
+			    break;
+			    case 'BNB':
+			    	coste_cripto = 469.34;
+			    	Numero_de_monedas = (importe/coste_cripto);
+			    break;
+			    case 'ADA':
+			    	coste_cripto = 2.17;
+			    	Numero_de_monedas = (importe/coste_cripto);
+			    break;
+			    default:
+			    	alert("No conozco la criptomoneda");
+			    }
+
+				//Si el importe a invertir compra menos de una moneda sugerir el mínimo de inversión y continuar con el flujo
+				if(Numero_de_monedas < 1){
+					alert("vas comprar menos de una moneda");
+				}
+				//Mostar la conversión en "resultado_conversion"
+				document.getElementById("resultado_conversion").value = Numero_de_monedas;
+				//Mostrar un mensaje en una ventana emergente del tipo
+				//"Enhorabuena <nombre> has adquirido <num criptomonedas> con el <importe>"
+				alert("Enhorabuena " + nombre +" has adquirido " + Numero_de_monedas + "con el importe"  + importe);
+				
+				//Si el importe a invertir compra menos de una moneda sugerir el mínimo de inversión 
+				alert ("se recomienda invertir al menos " + coste_cripto );
+			    break;
+			
+			    case "MXN":
+			        
+			     //Conversiones para el dolar usad la tabla
+				//    BTCBitcoin --->	$5788,895.
+				//	ETHEthereum --->	$333,650.49
+				//	BNBBinance Coin --->	$46933.34
+				//	ADACardano	 ---> $222.17
+								//Solicitar el usuario su nombre 
+				
+				//Solicitar el usuario el importe a emplear
+				
+				//Calcular la conversion a la criptomoneda seleccionada (recordar que puede seleccionar entre vavias)
+				//Si el importe a invertir compra menos de una moneda sugerir el mínimo de inversión y continuar con el flujo
+				
+				//Mostar la conversión en "resultado_conversion"
+				
+				//Mostrar un mensaje en una ventana emergente del tipo
+				//"Enhorabuena <nombre> has adquirido <num criptomonedas> con <importe>"
+				
+				
+				//Si el importe a invertir compra menos de una moneda sugerir el mínimo de inversión 
+				
+				
+			    break;
+			    case "GBP":
+			        
+			     //Conversiones para el dolar usad la tabla
+				//    BTCBitcoin --->	$5,895.
+				//	ETHEthereum --->	$3,650.49
+				//	BNBBinance Coin --->	$4.34
+				//	ADACardano	 ---> $0.17
+								//Solicitar el usuario su nombre 
+				
+				//Solicitar el usuario el importe a emplear
+				
+				//Calcular la conversion a la criptomoneda seleccionada (recordar que puede seleccionar entre vavias)
+				//Si el importe a invertir compra menos de una moneda sugerir el mínimo de inversión y continuar con el flujo
+				
+				//Mostar la conversión en "resultado_conversion"
+				
+				//Mostrar un mensaje en una ventana emergente del tipo
+				//"Enhorabuena <nombre> has adquirido <num criptomonedas> con <importe>"
+				
+				
+				//Si el importe a invertir compra menos de una moneda sugerir el mínimo de inversión 
+				
+			    break;
+			    case "EUR":
+			        
+			     //Conversiones para el dolar usad la tabla
+				//    BTCBitcoin --->	$572,895.
+				//	ETHEthereum --->	$32,650.49
+				//	BNBBinance Coin --->	$4692.34
+				//	ADACardano	 ---> $22.17
+				//Solicitar el usuario su nombre 
+				
+				//Solicitar el usuario el importe a emplear
+				
+				//Calcular la conversion a la criptomoneda seleccionada (recordar que puede seleccionar entre vavias)
+				//Si el importe a invertir compra menos de una moneda sugerir el mínimo de inversión y continuar con el flujo
+				
+				//Mostar la conversión en "resultado_conversion"
+				
+				//Mostrar un mensaje en una ventana emergente del tipo
+				//"Enhorabuena <nombre> has adquirido <num criptomonedas> con <importe>"
+				
+				
+				//Si el importe a invertir compra menos de una moneda sugerir el mínimo de inversión 
+				
+				
+			    break;
+			
+			    default:
+			        alert('Hemos tenido un buscar la criptomoneda');
+			    break;
+			}
+		}
+	}
+   </script>
+     
+</body>
+</html>

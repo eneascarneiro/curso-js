@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>1 - Strings o cadenas</title>
+</head>
+<body>
+    <h1>1 - String o cadenas</h1>
+    <input type="button" onclick="ejecutar()"  value="Ejecutar codigo"/>
+<script>
+   function ejecutar() {
+	var nombre, mensaje;
+
+	nombre = 'Juan Pablo';
+	
+	mensaje = 'Y entonces dije \'Buen Curso \'';
+	
+	//Concatenar en JavaScript
+	mensaje = 'JAVA' + 'SCRIPT';
+	
+	//Uniendo variables en una sola
+	var aprendiendo = 'Aprendiendo',
+	    tecnologia = 'JavaScript';
+	
+	mensaje = 'Aprendiendo JavaScript, CSS, HTML para ser Frontend';
+	
+	var repeticion = 'Javascript ';
+	
+	alert("Contenido de la variable tecnologia" + tecnologia);
+	
+	//PARA SABER CUANTAS LETRAS HAY
+	alert("CUANTAS LETRAS HAY en el contenido de la variable tecnologia" + tecnologia.length);
+	
+	//PARA CONCATEANAR
+	alert("concatenamos un texto a  la variable tecnologia" + tecnologia.concat(' ', 'es genial'));
+	
+	//PARA PONER EN MAYUSCULAS
+	alert("En mayusculas   la variable tecnologia" + tecnologia.toUpperCase());
+	
+	//PARA PONER EN MINUSCULAS
+	alert("En minusculas   la variable tecnologia" + tecnologia.toLowerCase());
+	
+	//Buscar dentro del mensaje
+	alert("Posición del texto JavaScript en la variable mensaje" +  mensaje.indexOf('JavaScript '));
+	
+	//Buscar dentro del mensaje y te retorna -1 porque no devuelve nada
+	alert("Si no encuento la cadena  en la variable mensaje devuelvo -1" +  mensaje.indexOf('PHP'));
+	
+	//Te muestra el texto desde el carácter 0 hasta el 10 (desde el principio)
+	alert ("el menaje es");
+	alert(" muestra el texto desde el carácter 0 hasta el 10 (desde el principio):" + mensaje.substr(0, 10));
+	alert(" muestra el texto desde el carácter 0 hasta el 10 (desde el principio):" + mensaje.substring(0, 10));
+	
+	alert(" muestra el texto desde el carácter 5 hasta el 10 (desde el principio):" + mensaje.substr(5, 10));
+	alert(" muestra el texto desde el carácter 5 hasta el 10 (desde el principio):" + mensaje.substring(5, 10));
+	
+	
+	//Slice hace lo mismo que substr y substring. Si queremos empezar desde el final podemos añadir números negativos
+	alert(mensaje.slice(-6));
+	
+	//Divide el mensaje en pequeñas porciones, lo divide por lo que tu pongas, ahora mismo por espacios
+	alert(mensaje.split(' '));
+	
+	//Cambia una cadena por otra
+	alert(mensaje.replace('CSS', 'PHP'));
+	
+	//##JAVASCRIPT MODERNO##
+	
+	//Includes te devuelve un true o false para ver si hay una cadena dentro del texto, es parecido al indexOf
+	alert(mensaje.includes('CSS'));
+	
+	//Para repetir una cadena
+	alert(repeticion.repeat(10));
+	}
+</script>
+</body>
+</html>

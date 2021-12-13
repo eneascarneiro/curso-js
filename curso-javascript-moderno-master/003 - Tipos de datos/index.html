@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>3 - tipos de dato</title>
+</head>
+<body>
+    <h1>3 - tipos de dato</h1>
+     <input type="button" onclick="ejecutar()"  value="Ejecutar codigo"/>
+<script>
+   function ejecutar() {
+		var valor;
+		
+		alert(typeof valor);
+		
+		//string
+		alert(typeof('Jose'));
+		
+		//number
+		alert(typeof(20));
+		
+		//boolean
+		alert(typeof(true));
+		
+		//object
+		alert(typeof({ nombre: 'Juan', profesion: 'developer' }));
+		
+		//object
+		alert(typeof(null));
+		
+		//symbol
+		alert(typeof(Symbol('Simbolo')));
+		
+		var arreglo = [1, 2, 3, 4, 5];
+		
+		//object
+		alert(typeof arreglo);
+		
+		//object
+		alert(typeof(new Date()));
+	}
+</script>
+</body>
+</html>

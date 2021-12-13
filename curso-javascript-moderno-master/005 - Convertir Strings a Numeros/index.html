@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>5 - convertir strings a numeros</title>
+</head>
+<body>
+    <h1>5 - convertir strings a numeros</h1>
+    <input type="button" onclick="ejecutar()"  value="Ejecutar codigo"/>
+<script>
+function ejecutar(){
+	const num1 = "50",
+    num2 = 10,
+    num3 = 'tres';
+    const numero1 = 1, numero2 = 2;
+    const num4 = 20.20;
+    
+//toFixed sólo aplica a numeros y no admite cadenas
+	var dato1 = 2837321;
+	var dato2 = 2198312.218371298;
+	
+	//Muestra el numero tal cual
+	alert( "Muestra el numero tal cual \ndato1: "+dato1 + "\n dato1.toFixed(): " + dato1.toFixed());
+	//Muesta el numero redondeado
+	alert( "Muesta el numero redondeado\n dato2: "+dato2 + "\n dato2.toFixed(): " + dato2.toFixed());
+	//Mostrando los numeros detrás de la coma
+	alert( "Mostrando los numeros detrás de la coma\n dato2: "+parseFloat(dato2) + "\n dato2.toFixed(): " + dato2.toFixed(6));
+	
+	//Hace la suma porque los dos son numeros
+	var resultado = numero1 + numero2;
+	alert("Hace la suma porque los dos son numeros \n numero1 = " + numero1 + " :  numero2 =  " + numero2 + " \n resultado= " + resultado );
+
+	
+	//El más entre cadenas, concatena
+	var resultado = num1 + num3;
+	alert("El más entre cadenas, concatena \n numero1 = " + num1 + " :  num3 =  " + num3 + " \n resultado= " + resultado );
+
+	
+	//Cuando hay una cadena y un numero, concatena
+	var resultado = num1 + num2;
+	alert("Cuando hay una cadena y un numero, concatena \n numero1 = " + num1 + " :  num2 =  " + num2 + " \n resultado= " + resultado );
+
+	
+	//Usando Number() podemos conseguir convertir de string a number
+	var resultado = Number(num1) + num2;
+	alert("Usando Number() podemos conseguir convertir de string a number  \nNumber(num1) + num2\n  numero1 = " + num1 + " :  num2 =  " + num2 + " \n resultado= " + resultado );
+
+	
+	//Vemos que nos devuelve un number
+	var resultado = typeof(Number(num1)) ;
+	alert("Usando Number() podemos conseguir convertir de string a number\nVemos que nos devuelve un number\n Number(num1)\n numero1 = " + num1 + " \n resultado= " + resultado );
+
+
+	//parseInt hace lo mismo
+	var resultado = typeof(parseInt(num1)) ;
+	alert("Usando parseInt() podemos conseguir convertir de string a entero\nVemos que nos devuelve un entero\n Number(num1)\n numero1 = " + num1 + " \n resultado= " + resultado );
+	
+	//Si restamos si que hace la resta (extraño caso de JavaScript)
+	var resultado = num1 - num2;
+	alert("Si restamos si que hace la resta aunque se declare como string (extraño caso de JavaScript) \n numero1 = " + num1 + " :  num2 =  " + num2 + " \n resultado= " + resultado );
+	
+	//Not a Number (NaN)
+	var resultado = Number(num3);
+	alert("Validaciones con números Not a number(NaN) \n num3 = " + num3 + "\n tipo variable: " + typeof(num3) + "\n Validar  Number(num3) : " + resultado);
+	
+	//number
+	var resultado = typeof(Number(num3));
+	alert("Validaciones con números Not a number(NaN) \n num3 = " + num3 + "\n tipo variable: " + typeof(num3) + "\n Validar typeof(Number(num3)) : " + resultado);
+
+	
+	//Not a Number (NaN)
+	alert("Not a Number (NaN)" + parseInt(num3));
+	//number
+	alert( "number typeof(parseInt(num3)) " + typeof(parseInt(num3)));
+	
+	//number
+	alert( " Number(num1) " + Number(num1));
+	
+	//number
+		var resultado = Number(num3);
+	alert(" Number(num3) \n num3 = " + num3 + "\n tipo variable: " + typeof(num3) + "\n Resultado : " + resultado);
+
+	
+	
+	//1
+	alert( "Number(true): " + Number(true));
+	
+	//0
+	alert( "Number(false): " + Number(false));
+	
+	//0
+	alert( "Number(null): " + Number(null));
+	
+	//NaN
+	alert( "Number(undefined):  " + Number(undefined));
+	
+	//NaN
+	alert( " Number('Hola mundo'): " + Number('Hola mundo'));
+	
+	//NaN
+	alert( "Number([1,2,4,5]) " + Number([1,2,4,5]));
+	
+	//ParseInt numeros enteros y ParseFloat numeros flotantes
+	alert( "parseInt('100'):  " + parseInt('100')); //100
+	
+	alert( "parseFloat('100'): " + parseFloat('100')); //100
+	
+	alert( "parseInt('100.203'):  " + parseInt('100.203')); //100
+	
+	alert( "parseFloat('100.203'): " + parseFloat('100.203')); //100.203
+	
+	
+	
+}
+
+</script>
+</body>
+</html>

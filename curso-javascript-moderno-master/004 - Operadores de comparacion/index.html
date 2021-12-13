@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>4 - operadores de comparacion</title>
+</head>
+<body>
+    <h1>4 - operadores de comparacion</h1>
+    <input type="button" onclick="ejecutar()"  value="Ejecutar codigo"/>
+<script>
+function ejecutar(){
+			const num1 = 20;
+		const num2 = 50;
+		//Recordar si el valor va entre "" '' la variable se entiende que es de tipo string
+		const num3 = '20';
+		var nombre1 = 'jose';
+		var nombre2 = 'juan';
+		
+		//false
+		var comparacion = num1 > num2;
+		alert("numero1 = " + num1 + " :  numero2 =  " + num2 + " \n: Comparacion  >(mayor) \n Resultado= " + comparacion );
+
+		//true
+		var comparacion = num1 < num2;
+		alert("numero1 = " + num1 + " :  numero2 =  " + num2 + " \n: Comparacion  <(menor) \n Resultado= " + comparacion );
+		
+		//comparador de igual
+		var comparacion = (num1 == num3);
+		alert("numero1 = " + num1 + " :  numero3 =  " + num3 + " \n: Comparacion =(igual) \n Resultado= " + comparacion );
+
+		
+		//con tres iguales revisa valor y tipo de dato
+		var comparacion = ( num1 === num3);
+		alert("numero1 = " + num1 + " :  numero3 =  " + num3 + " \n: Comparacion ===(con tres iguales revisa valor y tipo de dato) \n Resultado= " + comparacion );
+
+		//comparador de diferentes
+		var comparacion = (num1 != num2);
+		alert("numero1 = " + num1 + " :  numero2 =  " + num2 + " \n: Comparacion !=(diferentes) \n Resultado= " + comparacion );
+
+		//los espacios son importantes
+		var comparacion = ('-hola-' == '- hola-');
+		alert("los espacios son importantes ¿-hola- es igual a - hola-? \n Resultado  " + comparacion  );
+		
+		//A menor rango, y z mayor rango
+		var comparacion = ('a' > 'b');
+		alert("A menor rango, y z mayor rango a > b? \n Resultado  " + comparacion  );
+
+		comparacion = ('z' > 'B');
+		alert("A menor rango, y z mayor rango z > B? \n Resultado  " + comparacion  );
+
+}
+</script>
+</body>
+</html>

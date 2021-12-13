@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>2 - numeros y operaciones</title>
+</head>
+<body>
+    <h1>2 - numeros y operaciones</h1>
+    <input type="button" onclick="ejecutar()"  value="Ejecutar codigo"/>
+<script>
+function ejecutar(){
+	//Numeros en JavaScript
+	
+	//Si ponemos "30" es un string no un numero
+	const numero1 = 30,
+	    numero2 = 20,
+	    numero3 = 20.20,
+	    numero4 = .1020,
+	    numero5 = -3;
+	
+	var resultado;
+	
+	//suma
+	var suma = numero1 + numero2;
+	alert("numero1 = " + numero1 + " :  numero2 =  " + numero2 + " \n: Operacion  suma\n Resultado= " + suma );
+	
+	//restar
+	var resta = numero1 - numero2;
+	alert("numero1 = " + numero1 + " :  numero2 =  " + numero2 + " \n: Operacion  resta\n Resultado= " + resta );
+	
+	//multiplicar
+	var multiplicacion = numero1 * numero2;
+	alert("numero1 = " + numero1 + " :  numero2 =  " + numero2 + " \n: Operacion  multiplicacion\n Resultado= " + multiplicacion );
+	
+	
+	//divisiones
+	var divisiones = numero1 / numero2;
+	alert("numero1 = " + numero1 + " :  numero2 =  " + numero2 + " \n: Operacion  divisiones\n Resultado= " + divisiones );
+
+	
+	//modulo
+	var modulo = numero1 % numero2;
+	alert("numero1 = " + numero1 + " :  numero2 =  " + numero2 + " \n: Operacion  modulo\n Resultado= " + modulo );
+
+	
+	//pi
+	alert("numero pi" + Math.PI);
+	
+	//redondeo
+	var numero = 2.456;
+	alert("numero  "+ numero +"\n redondeo\n" +Math.round(numero));
+	
+	//redondeo hacia arriba
+	alert("numero "+ numero +"\n redondeo arriba\n" + Math.ceil(numero));
+	
+	//redondeo hacia abajo
+	alert("numero  "+ numero +"\n  redondeo abajo\n" + Math.floor(numero));
+	
+	//la importancia del orden
+	var num =  10 + 20 * 5;
+	alert("la importancia del orden\n 10 + 20 * 5 \n Resultado\n" +  num);
+	var num_1 =  (10 + 20) * 5;
+	alert("la importancia del orden\n (10 + 20) * 5 \n Resultado\n" +  num_1);
+	
+	//raiz cuadrada
+	console.log(Math.sqrt(144));
+	
+	//numero absoluto
+	console.log(Math.abs(numero5));
+	
+	//potencia
+	console.log(Math.pow(8, 3));
+	
+	//minimo
+	console.log(Math.min(3, 5, 1, 9, 7 ,8));
+	
+	//maximo
+	console.log(Math.max(3, 5, 1, 9, 7, 8));
+	
+	//numero aleatorio
+	console.log(Math.random())
+	
+
+	
+	
+}
+</script>
+</body>
+</html>

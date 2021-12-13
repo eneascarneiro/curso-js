@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+
+</head>
+<body>
+    <div>
+        <h1 class="center">Cotiza Criptomonedas al Instante</h1>
+    </div>
+    <div class="container contenido-principal">
+    	<form>
+    		<div>
+				<label>Moneda</label>
+								<br>
+				<select id="moneda">
+					<option value="" disabled selected>Elige tu Moneda </option>
+					<option value="USD">Dolar Estadounidense</option>
+					<option value="MXN">Peso Mexicano</option>
+					<option value="GBP">Libras</option>
+					<option value="EUR">Euros</option>
+				</select>
+			</div>
+			<div>
+				<br>
+				<br>
+				<br>
+				<label>Criptomoneda</label>
+								<br>
+				<select id="criptomoneda">
+	
+				<option value="" disabled selected>Elige Criptomoneda</option>
+					 <option value="BIT">BTCBitcoin</option>
+					<option value="ETH">ETHEthereum</option>
+					<option value="BNB">BNBBinance Coin</option>
+					<option value="ADA">ADACardano</option>
+				</select>
+			</div>
+    	</form>
+        <!-- Page Content goes here -->
+
+                            <button class="btn waves-effect waves-light orange darken-3"  onclick="convertir()"  name="action">Cotizar
+                                <i class="material-icons right">attach_money</i>
+                            </button>
+
+                        <div id="resultado" class="col s12">
+                        	<textarea id="conversion">Aqui veremos el resultado</textarea>
+                        </div>
+                  
+
+  </div>
+
+    <script>
+    function convertir() {           
+	    //Leer la moneda seleccionada
+	    var monedaSelect = document.getElementById('moneda');
+	    var monedaSeleccionada = monedaSelect.value;
+	
+	
+	    //Leer la criptomoneda seleccionada
+	    var criptoMonedaSelect = document.getElementById('criptomoneda');
+	    var criptoMonedaSeleccionada = criptoMonedaSelect.value;
+	
+	    //Comprobar que ambos campos tengan datos
+	    if(monedaSeleccionada === '' || criptoMonedaSeleccionada === '') {
+	       alert('Ambos campos son obligatorios', 'deep-orange darken-4 card-panel');
+	    }
+	    else
+	    {
+			switch(monedaSeleccionada) {
+			    case 'USD':
+			     //Conversiones para el dolar usad la tabla
+			    
+				//    BTCBitcoin --->	$57,895.
+				//	ETHEthereum --->	$3,650.49
+				//	BNBBinance Coin --->	$469.34
+				//	ADACardano	 ---> $2.17
+				//Calcular la conversion
+				
+				//Mostar la conversión en conversion
+				
+			    break;
+			/*
+			    case "MXN":
+			        
+			     //Conversiones para el dolar usad la tabla
+				//    BTCBitcoin --->	$5788,895.
+				//	ETHEthereum --->	$333,650.49
+				//	BNBBinance Coin --->	$46933.34
+				//	ADACardano	 ---> $222.17
+				//Calcular la conversion
+				
+				//Mostar la conversión en conversion
+				
+			    break;
+			    case "GBP":
+			        
+			     //Conversiones para el dolar usad la tabla
+				//    BTCBitcoin --->	$5,895.
+				//	ETHEthereum --->	$3,650.49
+				//	BNBBinance Coin --->	$4.34
+				//	ADACardano	 ---> $0.17
+				//Calcular la conversion
+				
+				//Mostar la conversión en conversion
+				
+			    break;
+			    case "EUR":
+			        
+			     //Conversiones para el dolar usad la tabla
+				//    BTCBitcoin --->	$572,895.
+				//	ETHEthereum --->	$32,650.49
+				//	BNBBinance Coin --->	$4692.34
+				//	ADACardano	 ---> $22.17
+				//Calcular la conversion
+				
+				//Mostar la conversión en conversion
+				
+				
+			    break;
+			*/
+			    default:
+			        alert('Hemos tenido un error al obtener el mes');
+			    break;
+			}
+		}
+	}
+   </script>
+     
+</body>
+</html>
