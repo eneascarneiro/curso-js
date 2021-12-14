@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Introducción de datos de usuario</h2>
+<label>Nombre</label> <textarea id="txtNombre" ></textarea>
+<br>
+<label>Apellido</label><textarea id="txtApellido"></textarea>
+<br>
+<label>Nombre Completo</label><textarea id="txtNombreCompleto"></textarea>
+<br>
+<button onclick="accion1()">  Ejecutame</button>
+
+<script>
+    function accion1(){
+        //Declaracion de variables
+        var strNombreCompleto = "";
+        var strNombre = "";
+        var strApellido = "";
+        //Leemos el nombre del texto
+        strNombre = document.getElementById("txtnombre").value;
+       
+        //Leemos el apellido del texto
+        strApellido = document.getElementById("txtApellido").value;
+        //Concatenar( unir ) nombre y apellido dejando un espacio en el medio
+        strNombreCompleto = strNombre + " " + strApellido;
+
+        //Cambiar el color del área de texto
+        var txtArea = document.getElementById('txtNombre');
+        txtArea.style.color = '#443366';
+
+        //document.getElementById("txtNombre").style.color("#888");
+
+        document.getElementById("txtNombreCompleto").value = strNombreCompleto;
+    }
+</script>
+
+</body>
+</html>
