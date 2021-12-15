@@ -47,6 +47,7 @@ function ejecutar(){
 	
 	//pi
 	alert("numero pi" + Math.PI);
+
 	
 	//redondeo
 	var numero = 2.456;
@@ -58,6 +59,9 @@ function ejecutar(){
 	//redondeo hacia abajo
 	alert("numero  "+ numero +"\n  redondeo abajo\n" + Math.floor(numero));
 	
+	//redondeo a n decimales
+	alert("numero  "+ numero +"\n  redondeo a n decimales\n" + numero.toFixed(1));
+
 	//la importancia del orden
 	var num =  10 + 20 * 5;
 	alert("la importancia del orden\n 10 + 20 * 5 \n Resultado\n" +  num);
@@ -65,23 +69,31 @@ function ejecutar(){
 	alert("la importancia del orden\n (10 + 20) * 5 \n Resultado\n" +  num_1);
 	
 	//raiz cuadrada
-	console.log(Math.sqrt(144));
+	alert(Math.sqrt(144));
 	
 	//numero absoluto
-	console.log(Math.abs(numero5));
+	alert(Math.abs(numero5));
 	
 	//potencia
-	console.log(Math.pow(8, 3));
+	alert(Math.pow(8, 3));
 	
 	//minimo
-	console.log(Math.min(3, 5, 1, 9, 7 ,8));
+	alert(Math.min(3, 5, 1, 9, 7 ,8));
 	
 	//maximo
-	console.log(Math.max(3, 5, 1, 9, 7, 8));
+	alert(Math.max(3, 5, 1, 9, 7, 8));
 	
 	//numero aleatorio
-	console.log(Math.random())
-	
+	alert(Math.random())
+
+// Retorna un entero aleatorio entre min (incluido) y max (excluido)
+// ¡Usando Math.round() te dará una distribución no-uniforme!
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+	var valor_inicial = 1
+	var valor_final = 10
+	alert(getRandomInt(valor_inicial,valor_final))
 
 	
 	
