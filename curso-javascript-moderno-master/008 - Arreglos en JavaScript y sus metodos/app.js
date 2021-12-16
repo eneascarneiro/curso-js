@@ -32,7 +32,7 @@ numeros.push(70);
 console.log(numeros);
 
 //Añadir al inicio del array, con el método UNSHIFT
-numeros.unshift(0);
+numeros.unshift("valor");
 
 console.log(numeros);
 
