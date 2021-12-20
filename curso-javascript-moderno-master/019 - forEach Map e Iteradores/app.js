@@ -55,3 +55,5 @@ const automovil =  {
 for(let auto in automovil) {
     alert(`${auto} : ${automovil[auto]}`);
 }
+
+

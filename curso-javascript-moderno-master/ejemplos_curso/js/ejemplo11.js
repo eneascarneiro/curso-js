@@ -1,31 +1,4 @@
-//Crear un array de objetos
-const autos = [
-    {
-        modelo: 'Mustang',
-        motor: 6.4
-    },
-    {
-        modelo: 'Ferrari',
-        motor: 6.1
-    },
-    {
-        modelo: 'Challenger',
-        motor: 6.2
-    }
-];
-
-//Para verlos todos
-console.log(autos);
-
-//Para acceder al primero
-console.log(autos[0]);
-
-//Para mostrarlos todos uno a uno
-for(let i = 0; i < autos.length; i++) {
-    console.log(`Modelo: ${autos[i].modelo}, motor: ${autos[i].motor}`);
-}
-
-//Array de personas
+//ejemplo de como recorrer un array complejo
 var arrPersonas =[
     {
         nombre: 'Miguel',
@@ -42,11 +15,8 @@ var arrPersonas =[
                     },
             pais: 'Mexico'
         },
-        nacimiento: () => {
-            return new Date().getFullYear() - this.edad;
-        },
-        nacimientoBisiesto: (num) => {
-            return new Date().getFullYear() - this.edad - num;
+        nacimiento: (edad) => {
+            return new Date().getFullYear() - edad;
         }
     },
         {
@@ -64,11 +34,8 @@ var arrPersonas =[
                         },
                 pais: 'Mexico'
             },
-            nacimiento: () => {
-                return new Date().getFullYear() - this.edad;
-            },
-            nacimientoBisiesto: (num) => {
-                return new Date().getFullYear() - this.edad - num;
+            nacimiento: (edad) => {
+                return new Date().getFullYear() - edad;
             }
         },
             {
@@ -86,21 +53,15 @@ var arrPersonas =[
                             },
                     pais: 'Mexico'
                 },
-                nacimiento: () => {
-                    return new Date().getFullYear() - this.edad;
-                },
-                nacimientoBisiesto: (num) => {
-                    return new Date().getFullYear() - this.edad - num;
+                nacimiento: (edad) => {
+                    return new Date().getFullYear() - edad;
                 }
             }
 ]
-
-console.log(arrPersonas[2].hogar.ciudad.nombreCiudad);
-var i = 0
-//Para mostrarlos todos uno a uno
-for( i = 0; i < arrPersonas.length; i++) {
-    console.log(arrPersonas[i].hogar.ciudad.nombreCiudad);
-    for (let j= 0; j < arrPersonas[i].musica.length; j++){
-        console.log(arrPersonas[i].musica[j]);
-    }
-}
+arrPersonas.forEach((persona, index) => {
+        alert(`La persona nombre  ${persona.nombre} vive en  : ${persona.hogar.ciudad.dirección} y tiene la posicion en al array ${index}`);
+        //Si encuentro a norberto dime su edad
+        if (persona.nombre == "Luisa"){
+            alert(` ${persona.nombre} nacio el año: ${persona.nacimiento(persona.edad)}`)
+        }
+});

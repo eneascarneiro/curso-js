@@ -1,6 +1,6 @@
 //Crear un objeto
 
-const persona = {
+var persona = {
     nombre: 'Miguel',
     apellido: 'Martinez',
     profesion: 'Diseñador gráfico',
@@ -8,11 +8,18 @@ const persona = {
     edad: 20,
     musica: ['rock', 'metal', 'grunge'],
     hogar: {
-        ciudad: 'Guadalajara',
+        ciudad: {
+                nombreCiudad: 'Guadalajara',
+                dirección: 'Via Luis 15',
+                numero: 10
+                },
         pais: 'Mexico'
     },
     nacimiento: () => {
         return new Date().getFullYear() - this.edad;
+    },
+    nacimientoBisiesto: (num) => {
+        return new Date().getFullYear() - this.edad - num;
     }
 };
 
@@ -24,6 +31,7 @@ console.log(persona.nombre);
 console.log(persona.edad);
 console.log(persona.musica);
 console.log(persona.musica[0]);
+console.log(persona.hogar.ciudad.nombreCiudad);
 
 //Podemos acceder al array y añadirle por ejemplo otro tipo de música
 persona.musica.push('indie');
@@ -38,3 +46,4 @@ console.log(persona['hogar']['pais']);
 
 //Acceder a la función dentro de un objeto
 console.log(persona.nacimiento());
+console.log(persona.nacimientoBisiesto(2));

@@ -10,6 +10,16 @@ for(let i = 0; i < 10; i++) {
 
 }
 
+for(let i = 10; i > 0; i--) {
+    if(i == 5) {
+        console.log(`Voy en el ${i}`);
+        console.log("Voy en el " + i);
+        console.log('Voy en el ' + i);
+    }
+    console.log(`Numero ${i}`);
+
+}
+
 //Arrays
 
 const instrumentos = ['Guitarra', 'Violonchelo', 'Piano'];
