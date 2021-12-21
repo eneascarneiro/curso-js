@@ -5,7 +5,7 @@ const navegacion = document.querySelector('#principal');
 console.log(navegacion);
 
 //Borrando primer elemento
-enlaces[0].remove();
+//enlaces[0].remove();
 
 navegacion.removeChild(enlaces[1]);
 
@@ -24,11 +24,12 @@ primerLi.classList.add('nueva-lista2');
 primerLi.classList.remove('nueva-lista2');
 
 //obtener una lista de CSS
-console.log(primerLi.classList);
+console.log("Mostrando la lista tras borrar:" +  primerLi.classList);
 
 //Leer atributos
 console.log(primerLi.getAttribute('href'));
-console.log(primerLi.setAttribute('href', 'http://www.twitter.com'));
+primerLi.setAttribute('href', 'http://www.twitter.com');
+
 //Debemos de volver a cargar para ver el nuevo atributo
 console.log(primerLi.getAttribute('href'));
 

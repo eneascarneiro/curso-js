@@ -15,15 +15,16 @@ let altura, anchura;
 altura = window.outerHeight;
 anchura = window.outerWidth;
 
-console.log(altura);
-console.log(anchura);
+
+console.log("Altura" + altura);
+console.log("Anchura" + anchura);
 
 //Sólo lo que se muestra
 alturaOnly = window.innerHeight;
 anchuraOnly = window.innerWidth;
 
-console.log(alturaOnly);
-console.log(anchuraOnly);
+console.log("alturaOnly" +  alturaOnly);
+console.log("anchuraOnly" + anchuraOnly);
 
 let ubicacion;
 

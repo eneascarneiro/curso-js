@@ -63,6 +63,7 @@ let imagenes = document.images;
 let imagenesArray = Array.from(imagenes);
 
 console.log(imagenesArray);
+document.getElementById("encabezado").textContent = "rr"
 
 
 //Utilizar un forEach

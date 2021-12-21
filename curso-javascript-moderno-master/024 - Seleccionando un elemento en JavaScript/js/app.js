@@ -8,6 +8,17 @@ encabezado.style.color = '#fff';
 encabezado.style.padding = '20px';
 encabezado.textContent = 'Los mejores cursos';
 
+function wait(ms){
+    var start = new Date().getTime();
+    var end = start;
+    while(end < start + ms) {
+      end = new Date().getTime();
+   }
+    encabezado.style.color = '#222';
+ }
+ wait(5000);
+
+
 const enlace = document.querySelector('.enlace');
 
 //Sólo te devuelve el primero
@@ -23,15 +34,24 @@ const image = document.querySelector('.card img');
 
 console.log(image);
 
+const mydiv = document.querySelector('.card div');
+
+console.log(mydiv);
+
+const precio = document.querySelector('.precio');
+
+console.log(precio);
+
 //Para devolver el primer elemento
 let enlaces;
 
 //Obtener el primer enlace
 enlaces = document.querySelector('#principal a:first-child');
 
+console.log("Obtener el primer enlace" + enlaces);
 //Obtener el tercer enlace
 enlaces = document.querySelector('#principal a:nth-child(3)');
-
+console.log("Obtener el tercer  enlace" + enlaces);
 //Obtener el último enlace
 enlaces = document.querySelector('#principal a:last-child');
 

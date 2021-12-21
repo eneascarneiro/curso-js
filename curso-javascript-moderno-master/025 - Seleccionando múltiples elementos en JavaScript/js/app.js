@@ -13,6 +13,7 @@ let enlacesNew = document.getElementsByClassName('enlace')[2];
 enlacesNew.style.background = '#333';
 enlacesNew.innerText = 'Nuevo enlace';
 
+
 //Podemos mezclar distintos elementos de seleccion
 
 const listaEnlaces = document.querySelector('#principal').getElementsByClassName('enlace');

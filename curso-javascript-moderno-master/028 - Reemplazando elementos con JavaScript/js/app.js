@@ -4,6 +4,7 @@ const nuevoEncabezado = document.createElement('h2');
 
 //Agregar una id
 nuevoEncabezado.id = 'encabezado';
+
 console.log(nuevoEncabezado);
 
 //Agregar nuevo texto
@@ -17,6 +18,8 @@ console.log(anterior.parentElement);
 
 //Elemento padre
 const elPadre = document.querySelector('#lista-cursos');
+console.log(elPadre);
+const elPadre1 = anterior.parentElement;
 
 //Reemplazar
-elPadre.replaceChild(nuevoEncabezado, anterior);
+elPadre1.replaceChild(nuevoEncabezado, anterior);
