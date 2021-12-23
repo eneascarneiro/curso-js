@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Introducción de datos de usuario</h2>
+<label>Nombre</label> <textarea id="txtNombre" ></textarea>
+<br>
+<label>Apellido</label><textarea id="txtApellido"></textarea>
+<br>
+<label>Nombre Completo</label><textarea id="txtNombreCompleto"></textarea>
+<br>
+<label>posicion letra</label><textarea id="txtPosicionLetra"></textarea>
+<br>
+<label>Letra encontrada</label><textarea id="txtLetraEncontrada"></textarea>
+<br>
+<button onclick="accion1()">  Ejecutame</button>
+
+<script>
+    function accion1(){
+        //Declaracion de variables
+        var strNombreCompleto = "";
+        var strNombre = "";
+        var strApellido = "";
+        var intPos = 0;
+        var intPosLeida = 0;
+        var strLetra = "";
+        //Leemos el nombre del texto
+        strNombre = document.getElementById("txtNombre").value;
+       
+        //Leemos el apellido del texto
+        strApellido = document.getElementById("txtApellido").value;
+        //Concatenar( unir ) nombre y apellido dejando un espacio en el medio
+        strNombreCompleto = strNombre + " " + strApellido;
+
+        //Leemos la posicion a buscar
+        intPos = document.getElementById("txtPosicionLetra").value;
+        if( isNaN(intPos) ) {
+            alert( "La posicion debe ser un número");
+        } else {
+            if (intPos == 0) {
+                intPos = 0;
+            } else
+            {
+
+                intPos = intPos -1;
+            }
+            strLetra = strNombreCompleto.charAt(intPos);
+            //Cambiar el color del área de texto
+            var txtArea = document.getElementById('txtNombre');
+            txtArea.style.color = '#443366';
+            document.getElementById("txtNombreCompleto").value = strNombreCompleto;
+            document.getElementById("txtLetraEncontrada").value = strLetra;
+        } 
+            
+    }
+</script>
+
+</body>
+</html>

@@ -1,3 +1,4 @@
+
 function Cliente(nombre, saldo) {
     this.nombre = nombre;
     this.saldo = saldo;
@@ -27,9 +28,13 @@ Cliente.prototype.retirarSaldo = function(retiro) {
     return this.saldo -= retiro;
 }
 
+
+
 const cliente1 = new Cliente('Pedro', 100);
+console.log(cliente1)
 const cliente2 = new Cliente('Antonio', 600);
 const cliente3 = new Cliente('Karen', 1200);
+
 
 console.log(cliente3.retirarSaldo(300));
 
