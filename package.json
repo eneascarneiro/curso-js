@@ -1,0 +1,23 @@
+{
+  "name": "curso",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eneascarneiro/curso-js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eneascarneiro/curso-js/issues"
+  },
+  "homepage": "https://github.com/eneascarneiro/curso-js#readme",
+  "dependencies": {
+    "docenv": "^2.0.6"
+  }
+}

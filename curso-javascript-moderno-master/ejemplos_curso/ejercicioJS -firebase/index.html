@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Carrito</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+
+   
+<header id="header" class="header">
+    <div class="container u-full-width">
+        <div class="row">
+            <div class="six columns u-full-width">
+                <div class="two columns u-pull-left" ></div>
+                    <img src="img/calderon.jfif" width="80%" id="logo">
+                </div>
+                <div class="three columns userpassw" >
+                    <label class ="labell">Usuario</label><input type="text" class = "textlogin" id="usuario">
+                    <label class ="labell">Passwod</label><input type="password" class = "textlogin" id="password">
+                </div>
+                <div class="two columns loginbtn" >
+                    <button type="submit" id="login" class="btn" onclick="loginUsername()" >Log in</button>
+                    <button type="submit" id="logout" class="btn" onclick="logOutUsername()" >Log out</button>
+                </div>            
+                <div class="one columns u-pull-right loginbtn">
+                    <ul>
+                        <li class="submenu">
+                            <img src="img/cart.png" id="img-carrito">
+                            <div id="carrito">
+                                <table id="lista-carrito" class="u-full-width">
+                                    <thead>
+                                        <tr>
+                                            <th>Imagen</th>
+                                            <th>Nombre</th>
+                                            <th>Precio</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                                <a href="#" id="vaciar-carrito" class="button u-full-width">Vaciar Carrito</a>
+                                <a href="#" id="comprar-carrito" class="button u-full-width">Comprar</a>
+                            </div>
+                        </li>
+                        <li class="submenu">
+                            <img src="img/bolsa.png" width="30" id="img-bolsa">
+                            <div id="compra">
+                                <table id="lista-compra" class="u-full-width">
+                                    <thead>
+                                        <tr>
+                                            <th>Imagen</th>
+                                            <th>Nombre</th>
+                                            <th>Precio</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div> 
+    </div>
+    </header>
+
+
+    <div id="hero">
+        <div class="container">
+            <div class="row">
+                    <div class="six columns">
+                        <div class="contenido-hero">
+                                <h2>Aprende algo nuevo</h2>
+                                <p>Todos los cursos a $15</p>
+                                <form action="#" id="busqueda" method="post" class="formulario">
+                                    <input class="textinput u-full-width" type="text" placeholder="¿Que te gustaría Aprender?" id="buscador">
+                                    <input type="submit" id="submit-buscador" class="submit-buscador">
+                                </form>
+                        </div>
+                    </div>
+            </div> 
+        </div>
+    </div>
+
+    <div class="barra">
+        <div class="container">
+            <div class="row">
+                    <div class="four columns icono icono1">
+                        <p>20,000 Cursos en línea <br>
+                        Explora  los temas más recientes</p>
+                    </div>
+                    <div class="four columns icono icono2">
+                        <p>Instructores Expertos <br>
+                        Aprende con distintos estilos</p>
+                    </div>
+                    <div class="four columns icono icono3">
+                        <p>Acceso de por vida <br>
+                        Aprende a tu ritmo</p>
+                    </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="lista-cursos" class="container">
+        
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-auth.js"></script>
+    <script type ="module" src="js/config.js"></script>
+
+    <script>
+        // Initialize Firebase
+        const xhr = new XMLHttpRequest();
+        var url ="config.json";
+        //
+        var firebaseConfig =
+        {
+            "apiKey": "",
+            "authDomain": "",
+            "projectId": "",
+            "storageBucket": "",
+            "messagingSenderId": "",
+            "appId": "",
+            "measurementId": "" 
+        };
+        //Abrimos conexión
+        //Método GET, archivo, asincrono
+        console.log("Antes de leer ")
+        xhr.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var configuracion = JSON.parse(this.responseText);
+                copiarInfo(configuracion);
+            }
+        };
+        xhr.open('GET', url, true);
+        xhr.send();
+        //Declaramos las variables para autenticarse
+        app = '';
+        auth = '';
+        //Funciones
+        function loginUsername(){
+        console.log("validando usuario");
+        var email = document.getElementById("usuario").value;
+        var password = document.getElementById("password").value;
+        console.log("validando usuario:" + email +":" + password );
+        auth.signInWithEmailAndPassword(email, password).then(function() {
+            //NEED TO PULL USER DATA?
+            alert("Bien venido a la aplicacion");
+            redirect("/");
+            return true;
+        });              
+        }
+        function logOutUsername(){
+        auth.signOut().then(function() {
+            //NEED TO PULL USER DATA?
+            alert("Gracias por visitarnos");
+            redirect("/");
+        });              
+        }
+        function copiarInfo(configuration){
+            firebaseConfig.apiKey = configuration.apiKey;
+            firebaseConfig.authDomain = configuration.authDomain;
+            firebaseConfig.projectId = configuration.projectId;
+            firebaseConfig.storageBucket = configuration.storageBucket;
+            firebaseConfig.messagingSenderId = configuration.messagingSenderId;
+            firebaseConfig.appId = configuration.appId;
+            firebaseConfig.measurementId = configuration.measurementId;
+            app = firebase.initializeApp(firebaseConfig);
+            auth = app.auth();
+        }
+    </script>
+    
+    <script src="js/app_comun.js"></script>
+    <script src="js/app.js"></script>
+    <footer id="footer" class="footer">
+        <div class="container">
+            <div class="row">
+                    <div class="four columns">
+                            <nav id="principal" class="menu">
+                                <a class="enlace" href="#">Para tu Negocio</a>
+                                <a class="enlace" href="#">Conviertete en Instructor</a>
+                                <a class="enlace" href="#">Aplicaciones Móviles</a>
+                                <a class="enlace" href="#">Soporte</a>
+                                <a class="enlace" href="#">Temas</a>
+                            </nav>
+                    </div>
+                    <div class="four columns">
+                            <nav id="secundaria" class="menu">
+                                <a class="enlace" href="#">¿Quienes Somos?</a>
+                                <a class="enlace" href="#">Empleo</a>
+                                <a class="enlace" href="#">Blog</a>
+                            </nav>
+                    </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

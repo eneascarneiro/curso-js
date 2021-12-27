@@ -17,6 +17,10 @@ function cargarAPI() {
             let contenido = '';
 
             respuesta.forEach((post) => {
+                /*contenido = contenido +  `
+                <h3>${post.title}</h3>
+                <p>${post.body}</p>
+            `;*/
                 contenido += `
                     <h3>${post.title}</h3>
                     <p>${post.body}</p>
