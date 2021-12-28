@@ -16,6 +16,25 @@ function callback(ciudad) {
 ciudades.forEach(callback);
 
 console.log('-----------------');
+//Llamar pedir json
+//esperar a que responda 
+//crear el catalogo
+
+function cargar_catalogos(datos_llamada,callback){
+    setTimeout(function() {
+        callback();
+    }, 2000);
+}
+
+function cargar_cursos_cocina(){
+
+}
+function cargar_cursos_informatica(){
+    
+}
+cargar_catalogos(datos_iniciales,cargar_cursos_cocina);
+cargar_catalogos(datos_iniciales,cargar_cursos_informatica);
+
 
 //Se agrega unnuevo país despues de 2 segundos
 function nuevoPais(pais, callback) {
