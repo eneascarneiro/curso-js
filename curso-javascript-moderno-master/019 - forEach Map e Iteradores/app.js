@@ -53,7 +53,40 @@ const automovil =  {
 }
 
 for(let auto in automovil) {
-    alert(`${auto} : ${automovil[auto]}`);
+    console.log(`${auto} : ${automovil[auto]}`);
 }
 
 
+//Recorrer con map de un arreglo de objetos
+const carrito1 = [
+    {
+        id: 1,
+        producto: 'Libro'
+    },
+    {
+        id: 2,
+        producto: 'Guitarra'
+    },
+    {
+        id: 3,
+        producto: 'Disco'
+    },
+    {
+        id: 4,
+        producto: 'Camisa'
+    },
+    {
+        id: 5,
+        producto: 'Altavoz'
+    }
+]
+j = 0;
+for (let elemento of carrito1) {
+    j += 1;
+    console.log(j);
+    console.log(elemento)
+    for(let field in elemento) {
+        console.log(`${field} : ${elemento[field]}`);
+    }
+  }
+  
