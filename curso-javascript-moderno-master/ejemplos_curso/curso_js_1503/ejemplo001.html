@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejercicio 001 - Strings o cadenas</title>
+</head>
+<body>
+    <h1>Ejercicio 001 - Strings o cadenas</h1>
+    <input type="button" onclick="ejecutar()"  value="Ejecutar codigo"/>
+    <br>
+    <label></label> <p></p>
+    <label>Nombre</label> <textarea id ="nombre"></textarea>
+    <br>
+    <label>direc</label> <textarea id = "direc"></textarea>
+    <br>
+    <label>Numero</label> <textarea id = "Numero"></textarea>
+    <label>El resultado de la acción 1  es:</label><p id ="resultado1"> Aqui va la respuesta</p>
+    <label>El resultado de la acción 2 es:</label><p id ="resultado2">Aqui va la respuesta</p>
+    <label>El resultado de la acción 3 es:</label><p id ="resultado3">Aqui va la respuesta</p>
+    <label>El resultado de la acción 4 es:</label><p id ="resultado4">Aqui va la respuesta</p>
+    <label id="labe5">El resultado de la acción 5 es:</label><p id ="resultado5">Varlo anterior de olga</p>
+<script>
+   function ejecutar() {
+	//Empezamos por la cadena
+    nombre = document.getElementById("nombre").value
+    alert("Hola:" + document.getElementById("nombre").value)
+    mensaje = "El hfsuiyrfmoaucf,psukzepcul perro de san roque no tiene rabo"
+    mensaje1 = "porque  Ramon Ramirez se lo ha robado"
+    //Obetener la longitud de los dos mensajes y sumarlas , alert con el resultado
+    longitud = mensaje.length + mensaje1.length
+    //alert("El número de letras es: " + longitud );
+    document.getElementById("resultado1").innerHTML = longitud
+    // Concatenar en en un solo mensaje todo el trabalenguas
+    //alert(mensaje + ' ' + mensaje1)
+    //alert(mensaje.concat(' ',mensaje1))
+    mensaje_final = mensaje + ' ' + mensaje1
+    document.getElementById("resultado2").innerHTML = mensaje_final
+    //alert(mensaje + 2 +3)
+    //alert(mensaje.concat(2+3))
+    // Escribir todo en mayúsculas
+    //alert(mensaje.toUpperCase() + ' ' + mensaje1.toUpperCase())
+    document.getElementById("resultado3").innerHTML = mensaje_final.toUpperCase()
+    //Cambiar perro por gato y mostrar trabalenguas
+    //alert(me nsaje_final.replace('perro','gato'))
+    document.getElementById("resultado4").innerHTML =  nombre + "cambia perro por gato " +mensaje_final.replace('perro','gato')
+    //añadir en el html un parágrafo <p></p>  y mostrar texto hasta perro
+    texto_hasta_perro = mensaje_final.substr(0, mensaje_final.indexOf('perro'))
+    document.getElementById("resultado5").innerHTML = texto_hasta_perro 
+   
+
+	}
+</script>
+</body>
+</html>
