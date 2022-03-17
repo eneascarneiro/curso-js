@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejercicio 002</title>
+</head>
+<body>
+    <h1>Ejercicio 002</h1>
+    <p id ="resultado1"> Este es un texto sin saltos de linea</p>
+    <p id ="resultado1"> Este es un texto sin saltos de linea<br> y esta la nueva linea</p>
+    <script>
+        alert(" Este es un texto sin saltos de linea\n y esta la nueva linea")
+        cadena = "34rty678dfñldfmjgñov"
+        alfabeto = "abcdefghijklmnñopqrstuvwxyz"
+        alfabeto_mayuscula = alfabeto.toUpperCasa()
+        for(let posicion = 0; i < cadena.lenght; posicion++) {
+            texto = cadena[posicion]
+            var resultado = parseInt(texto) 
+            console.log(typeof(resultado))
+
+            if (resultado)  {
+                valor = parseInt(texto)
+                alert("es numero: " + valor )
+            }
+            else{
+                alert("es letra: " +texto )
+                
+                if (alfabeto.includes(texto)){
+                    //¿El caracter es una letra minúscula?
+                    alert("es letra minuscula: " +texto )
+                }else if (alfabeto_mayuscula.includes(texto)){
+                    //¿El caracter es una letra mayuscula?
+                    alert("es letra mayuscula: " +texto )
+                } else {
+                    //otro
+                    alert("es es dr otro tipo: " +texto )
+                }
+            }
+        }
+    </script>
+</body>
+</html>

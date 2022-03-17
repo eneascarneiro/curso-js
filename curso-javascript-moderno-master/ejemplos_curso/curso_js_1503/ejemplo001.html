@@ -10,7 +10,6 @@
     <h1>Ejercicio 001 - Strings o cadenas</h1>
     <input type="button" onclick="ejecutar()"  value="Ejecutar codigo"/>
     <br>
-    <label></label> <p></p>
     <label>Nombre</label> <textarea id ="nombre"></textarea>
     <br>
     <label>direc</label> <textarea id = "direc"></textarea>
@@ -44,7 +43,7 @@
     document.getElementById("resultado3").innerHTML = mensaje_final.toUpperCase()
     //Cambiar perro por gato y mostrar trabalenguas
     //alert(me nsaje_final.replace('perro','gato'))
-    document.getElementById("resultado4").innerHTML =  nombre + "cambia perro por gato " +mensaje_final.replace('perro','gato')
+    document.getElementById("resultado4").innerHTML =  nombre + " cambia perro por gato " +mensaje_final.replace('perro','gato')
     //añadir en el html un parágrafo <p></p>  y mostrar texto hasta perro
     texto_hasta_perro = mensaje_final.substr(0, mensaje_final.indexOf('perro'))
     document.getElementById("resultado5").innerHTML = texto_hasta_perro 
