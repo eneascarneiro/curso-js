@@ -14,28 +14,29 @@
         alert(" Este es un texto sin saltos de linea\n y esta la nueva linea")
         cadena = "34rty678dfñldfmjgñov"
         alfabeto = "abcdefghijklmnñopqrstuvwxyz"
-        alfabeto_mayuscula = alfabeto.toUpperCasa()
-        for(let posicion = 0; i < cadena.lenght; posicion++) {
+        alfabeto_mayuscula = alfabeto.toUpperCase()
+        caracteres_numericos = 0
+        minusculas = 0
+        mayusculas  = 0
+        otros = 0
+        for(let posicion = 0; posicion < cadena.lenght; posicion++) {
             texto = cadena[posicion]
             var resultado = parseInt(texto) 
             console.log(typeof(resultado))
-
             if (resultado)  {
                 valor = parseInt(texto)
-                alert("es numero: " + valor )
+                caracteres_numericos = caracteres_numericos +1
             }
             else{
-                alert("es letra: " +texto )
-                
                 if (alfabeto.includes(texto)){
                     //¿El caracter es una letra minúscula?
-                    alert("es letra minuscula: " +texto )
+                    minusculas = minusculas +1
                 }else if (alfabeto_mayuscula.includes(texto)){
                     //¿El caracter es una letra mayuscula?
-                    alert("es letra mayuscula: " +texto )
+                    mayusculas =  mayusculas +1
                 } else {
                     //otro
-                    alert("es es dr otro tipo: " +texto )
+                    otros = otros +1
                 }
             }
         }

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo text area</title>
+</head>
+<body>
+    <h1>Ejemplo text area</h1>
+    <br>
+    <label>Introduce el texto</label><textarea id = "texto"></textarea>
+    <input type="button" onclick="ejecutar()"  value="Ejecutar codigo"/>
+
+<script>
+   function ejecutar() {
+        textoescrito = document.getElementById("texto").value
+        if (textoescrito.length > 0){
+            alert("Has escrito :" + textoescrito)
+        } else {
+            alert("No has escrito nada")
+        }
+   
+
+	}
+</script>
+</body>
+</html>
