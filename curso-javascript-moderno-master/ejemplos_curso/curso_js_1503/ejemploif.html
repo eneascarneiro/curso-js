@@ -14,19 +14,102 @@
     <br>
     <label>Resultado</label><textarea id = "resultado"></textarea>
     <br>
-    <input type="button" onclick="ejecutar()"  value="Ejecutar suma"/>
-
+    <input type="button" onclick="suma()"  value="Ejecutar suma"/>
+    <input type="button" onclick="resta()"  value="Ejecutar resta"/>
+    <input type="button" onclick="division()"  value="Ejecutar division"/>
+    <input type="button" onclick="multiplicacion()"  value="Ejecutar multiplicacion"/>
+    <input type="button" onclick="mum_pares()"  value="Ejecutar pares"/>
+    <input type="button" onclick="borrar()"  value="borrar"/>
 <script>
-   function ejecutar() {
-        //Calculadora
-        //Leer un numero de un text area num1
-
-        //Leer otro numero de un text area num2
-
-        //Escribir la suma en el text area resultado
-
+   function suma() {
+        //Calculadora 
+        if (EsNumero( document.getElementById("num_1").value) && EsNumero( document.getElementById("num_2").value)){
+            //Leer un numero de un text area num1
+            numero1 = parseFloat( document.getElementById("num_1").value)
+            //Leer otro numero de un text area num2
+            numero2 = parseFloat( document.getElementById("num_2").value)
+            //Escribir la suma en el text area resultado
+            valor = numero1 + numero2
+            document.getElementById("resultado").value = valor
+        } else {
+            alert( "los datos introducidos no son validos")
+        }
 
 	}
+    function resta() {
+        //Calculadora 
+        //Leer un numero de un text area num1
+        numero1 = parseFloat( document.getElementById("num_1").value)
+        //Leer otro numero de un text area num2
+        numero2 = parseFloat( document.getElementById("num_2").value)
+        //Escribir la suma en el text area resultado
+        valor = numero1 - numero2
+        document.getElementById("resultado").value = valor
+	}
+    function mum_pares(){
+        //Leer un numero de un text area num1
+        numero1 = parseFloat( document.getElementById("num_1").value)
+        //Leer otro numero de un text area num2
+        numero2 = parseFloat( document.getElementById("num_2").value)
+        document.getElementById("resultado").value = obtener_los_n_numeros_pares(numero1 ,numero2 )
+    }
+    function obtener_los_n_numeros_pares(numero_inicial, num_elem){
+        str_resultado = ""
+        //Si el numero es par emiezo sumando 2
+        if (!EsPar(numero_inicial)){
+            numero_inicial = numero_inicial +1
+        }
+        //Si el numero es impar cojo el siguiente y empiezo
+        for(let contador = 0; contador < num_elem; contador++) {
+            valor = 2* contador + numero_inicial
+            str_resultado = str_resultado + "," + valor
+            //str_resultado = (str_resultado + ",").concat(2* contador + numero_inicial)
+        }
+        return str_resultado
+    }
+    function division() {
+        //Calculadora 
+        //Leer un numero de un text area num1
+        numero1 = parseFloat( document.getElementById("num_1").value)
+        //Leer otro numero de un text area num2
+        numero2 = parseFloat( document.getElementById("num_2").value)
+        //Si el dividendo es 0 error
+        if (numero2 == 0){
+            alert("No se puede dividir por 0")
+        }
+        //Escribir la suma en el text area resultado
+        valor = numero1 / numero2
+        document.getElementById("resultado").value = valor
+	}
+    function multiplicacion() {
+        //Calculadora 
+        //Leer un numero de un text area num1
+        numero1 = parseFloat( document.getElementById("num_1").value)
+        //Leer otro numero de un text area num2
+        numero2 = parseFloat( document.getElementById("num_2").value)
+        //Escribir la suma en el text area resultado
+        valor = numero1 * numero2
+        document.getElementById("resultado").value = valor
+    }
+    function EsNumero(numero){
+        var resultado = parseInt(numero)
+        if (resultado){
+            return true
+        } else
+        {
+            return false
+        }
+    }
+    function EsPar(numero){
+        if(numero%2==0){
+            return true
+        }else{
+            return false
+        }
+    }
+    function borrar() {
+        document.getElementById("resultado").value = document.getElementById("num_1").value = document.getElementById("num_2").value = 0
+    }
 </script>
 </body>
 </html>
