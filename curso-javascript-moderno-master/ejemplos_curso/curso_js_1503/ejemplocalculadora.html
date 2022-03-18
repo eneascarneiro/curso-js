@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+    <title>Ejemplo calculadora</title>
+
+</head>
+<body>
+    <h1 class="w3-wide w3-center" >Ejemplo calculadora</h1>
+    <br>
+    <div class="w3-black">
+        <div class="w3-content">
+
+            <div class="w3-container w3-content w3-padding-64" style="max-width:400px">
+                <label class="label_num">Numero 1</label><textarea class="w3-input w3-border" id = "num_1" class = "textoentrada"></textarea>
+                <br>
+                <label class="label_num">Numero 2</label><textarea  class="w3-input w3-border" id = "num_2" class = "textoentrada"></textarea>
+                <br>
+                <p class="w3-border w3-content" id = "resultado">Resultado</p>
+                <br>
+                <div class="w3-content">
+                    <input type="button" class="w3-button w3-button w3-margin-bottom w3-border" onclick="ejecutar_operacion(document.getElementById('num_1').value, document.getElementById('num_2').value,'suma' )"  value="+"/>
+                    <input type="button" class="w3-button w3-black w3-margin-bottom w3-border" onclick="ejecutar_operacion(document.getElementById('num_1').value, document.getElementById('num_2').value,'resta' )"  value="-"/>
+                    <input type="button" class="w3-button w3-black w3-margin-bottom w3-border" onclick="ejecutar_operacion(document.getElementById('num_1').value, document.getElementById('num_2').value,'div' )"  value="/"/>
+                    <input type="button" class="w3-button w3-black w3-margin-bottom w3-border" onclick="ejecutar_operacion(document.getElementById('num_1').value, document.getElementById('num_2').value,'mult' )"  value="*"/>
+                    <br>
+                    <input type="button" class="w3-button w3-black w3-margin-bottom w3-border" onclick="ejecutar_operacion(document.getElementById('num_1').value, document.getElementById('num_2').value,'pares' )"  value="Pasres"/>
+                    <input type="button" class="w3-button w3-black w3-margin-bottom w3-border" onclick="ejecutar_operacion(document.getElementById('num_1').value, document.getElementById('num_2').value,'borrar' )"  value="Borrar"/>
+                </div>
+            </div>
+            
+    </div>
+    </div>
+    
+
+<script>
+    function ejecutar_operacion(num_1, num_2, operacion) {
+        //Comprobar si los dos valores introducidos son números
+        if (!(EsNumero(num_1) && EsNumero(num_2))){
+            alert("Los datos introducidos deben ser números")
+        }
+        else{
+            input_number1 = parseFloat(num_1)
+            input_number2 = parseFloat(num_2)
+        }
+        //Comprobamos la operación 
+        switch (operacion)
+        {
+            case "suma":
+                document.getElementById("resultado").innerHTML = input_number1 + input_number2
+                break
+            case "resta":
+                resta(input_number1,input_number2)
+                break
+            case "div": 
+                division(input_number1,input_number2)
+                break
+            case "mult":
+                multiplicacion(input_number1,input_number2)
+                break
+            case "pares":
+                num_pares(input_number1,input_number2)
+                break
+            case "borrar":
+                borrar()
+                break
+            default: 
+                alert('Opcion desconocida: ' +  operacion);
+        }
+        
+    }
+  
+    function resta(numero1, numero2) {
+        //Calculadora 
+        valor = numero1 - numero2
+        document.getElementById("resultado").innerHTML = valor
+	}
+    function num_pares(numero1, numero2){
+        document.getElementById("resultado").innerHTML = obtener_los_n_numeros_pares(numero1 ,numero2 )
+    }
+    function obtener_los_n_numeros_pares(numero_inicial, num_elem){
+        str_resultado = ""
+        //Si el numero es par emiezo sumando 2
+        if (!EsPar(numero_inicial)){
+            numero_inicial = numero_inicial +1
+        }
+        //Si el numero es impar cojo el siguiente y empiezo
+        for(let contador = 0; contador < num_elem; contador++) {
+            valor = 2* contador + numero_inicial
+            str_resultado = str_resultado + "," + valor
+            //str_resultado = (str_resultado + ",").concat(2* contador + numero_inicial)
+        }
+        return str_resultado
+    }
+    function division(numero1, numero2) {
+        //Calculadora 
+        //Si el dividendo es 0 error
+        if (numero2 == 0){
+            alert("No se puede dividir por 0")
+        }
+        //Escribir la suma en el text area resultado
+        valor = numero1 / numero2
+        document.getElementById("resultado").innerHTML = valor
+	}
+    function multiplicacion(numero1, numero2) {
+        //Calculadora 
+        //Escribir la suma en el text area resultado
+        valor = numero1 * numero2
+        document.getElementById("resultado").innerHTML = valor
+    }
+    function EsNumero(numero){
+        var resultado = parseInt(numero)
+        if (resultado){
+            return true
+        } else
+        {
+            return false
+        }
+    }
+    function EsPar(numero){
+        if(numero%2==0){
+            return true
+        }else{
+            return false
+        }
+    }
+    function borrar() {
+        document.getElementById("resultado").innerHTML = document.getElementById("num_1").value = document.getElementById("num_2").value = 0
+    }
+</script>
+</body>
+</html>

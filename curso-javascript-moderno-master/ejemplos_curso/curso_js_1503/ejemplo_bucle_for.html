@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo text area</title>
+</head>
+
+<body>
+    <h1>Ejemplo text area</h1>
+    <br>
+    <label>Introduce el numero inicial</label><textarea id="num_ini"></textarea>
+    <br>
+    <label>Introduce el final</label><textarea id="num_fin"></textarea>
+    <br>
+    <label>Introduce el incremento</label><textarea id="num_inc"></textarea>
+    <br>
+    <input type="button" onclick="ejecutar()" value="Ejecutar codigo" />
+
+    <script>
+        function ejecutar() {
+            console.clear()
+            num_inicial = parseInt(document.getElementById("num_ini").value)
+            num_final = parseInt(document.getElementById("num_fin").value)
+            incremento = parseInt(document.getElementById("num_inc").value)
+            if (num_inicial < num_final) {
+                for (let contador = num_inicial; contador <= num_final; contador += incremento) {
+                    //todo el  código se ejecta cada vez
+                    console.log(contador)
+                }
+            } else if (num_inicial > num_final) {
+                for (let contador = num_inicial; contador >= num_final; contador -= incremento) {
+                    //todo el  código se ejecta cada vez
+                    console.log(contador)
+                }
+            }
+            else {
+                alert("los numeros son iguales")
+            }
+
+        }
+    </script>
+</body>
+
+</html>

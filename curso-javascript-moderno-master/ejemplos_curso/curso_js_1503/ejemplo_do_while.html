@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo switch case</title>
+</head>
+
+<body>
+    <h1>Ejemplo switch case</h1>
+    <br>
+    <br>
+    <label>Introduce un numero del 1 al 10 </label><textarea id="numero"></textarea>
+    <br>
+    <label>Valor maximo </label><textarea id="max"></textarea>
+    <input type="button" onclick="ejecutar()" value="Ejecutar codigo" />
+
+    <script>
+        function ejecutar() {
+            console.clear()
+            num_leido  = document.getElementById("numero").value
+            vmax = document.getElementById("max").value
+            suma = 0
+            num_dentro_del_while = 1
+            do {
+                suma += num_dentro_del_while
+                console.log("Estoy dentro del while sumando :" + num_dentro_del_while + " al valor :" +  suma)
+                num_dentro_del_while ++
+            } while ( num_dentro_del_while <=  num_leido &&  suma <= vmax  )
+
+
+
+            }
+           /*
+let text = "";
+let i = 0;
+do {
+  text += i + "<br>";
+  i++;
+}
+while (i < 5);
+*/
+
+    </script>
+</body>
+
+</html>

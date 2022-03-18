@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo switch case</title>
+</head>
+
+<body>
+    <h1>Ejemplo switch case</h1>
+    <br>
+    <br>
+    <label>Introduce un día de la semana </label><textarea id="dia_semana"></textarea>
+    <input type="button" onclick="ejecutar()" value="Ejecutar codigo" />
+
+    <script>
+        function ejecutar() {
+            dia_que_yo_doy = (document.getElementById("dia_semana").value).toLowerCase()
+
+            switch(dia_que_yo_doy) {
+                case "lunes":
+                    alert("Hoy es martes")
+                    break
+                case "martes":
+                    alert("Hoy es miércoles")
+                    break
+                case "miércoles":
+                case "miercoles":
+                    alert("Hoy es jueves")
+                    break
+                case "jueves":
+                    alert("Hoy es viernes")
+                    break
+                case "viernes":
+                    alert("Hoy es sábado")
+                    break
+                case "sábado":
+                case "sabado":
+                    alert("Hoy es domingo")
+                    break
+                case "domingo":
+                    alert("Hoy es lunes")
+                    break
+                default:
+                    alert("No se de que día me hablas")
+            }
+           /*
+switch(expression) {
+    case x:
+      // code block
+      break;
+    case y:
+      // code block
+    
+      break;
+    default:
+      // code block
+  }
+*/
+
+
+        }
+    </script>
+</body>
+
+</html>
