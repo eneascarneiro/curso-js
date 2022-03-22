@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo adivinar numero</title>
+</head>
+
+<body>
+    <h1>Ejemplo  adivinar numero</h1>
+    <br>
+    <label for="fecha">Fecha:</label>
+    <input type="date" id="fecha" name="fecha">
+    <br>
+    <label for="email">email:</label>
+    <input type="email" id="email" name="email">
+    <br>
+    <label for="checkboxitm">Check Box:</label>
+    <input type="checkbox" id="checkboxitm" name="checkboxitm">
+    <br>
+    <label for="pwd">Numero a encontrar:</label>
+    <input type="password" id="numero_secreto" name="pwd">
+    <br>
+    <input type="button" onclick="ejecutar()" value="Ejecutar codigo" />
+
+    <script>
+        function ejecutar() {
+            console.clear()
+            numero_a_encontrar = document.getElementById("numero_secreto").value
+            //buscar la longitud de la cadena con la propiedad .length
+            
+            //crear la variable para la posicion e igualarla a 0
+            encortre_mumero = false
+            numero_de_vueltas = 0
+            do {
+                numero_de_vueltas ++
+                dime_un_num = parseInt(prompt("Introduce un numero del 1 al 10"))
+                if ( isNaN(dime_un_num) ){
+                    alert("Muchas gracias por jugar, pero no lo has acertado")
+                        encortre_mumero = true
+                } else if (dime_un_num == numero_a_encontrar ){
+                    alert("Has encontrado el número en :" + numero_de_vueltas + ", intentos" )
+                    encortre_mumero = true
+                } else{
+                    if (confirm("No has acertado , ¿Quieres continuar?") == false) {
+                        alert("Muchas gracias por jugar, pero no lo has acertado")
+                        encortre_mumero = true
+                    } 
+                }
+            } while ( encortre_mumero == false )
+           
+        }
+    </script>
+</body>
+</html>

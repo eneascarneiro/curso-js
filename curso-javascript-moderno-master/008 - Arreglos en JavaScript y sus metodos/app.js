@@ -1,6 +1,16 @@
 //Crear un array
 const numeros = [10, 20, 30, 40, 50];
-
+mi_array = ['perro',12,true,[12,45,23,45,79],['perro','gato','canario']] 
+var animal = "perro"
+/*
+animal[0]  -> 'p'
+miarray[0] --> 'perro'
+mi_array[0][0]  ---> 'p'
+mi_array[1] --> 12
+mi_array[2]  -> true
+mi_array[3][4] --> 79
+mi_array[4][1] --> 'gato'
+*/
 console.log(numeros);
 
 //Array de Strings (método alternativo)

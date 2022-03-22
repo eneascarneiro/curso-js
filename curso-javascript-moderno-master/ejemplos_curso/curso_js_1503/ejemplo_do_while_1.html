@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo switch case</title>
+</head>
+
+<body>
+    <h1>Ejemplo switch case</h1>
+    <br>
+    <br>
+    <label>Introduce una cadena</label><textarea id="cadena"></textarea>
+    <br>
+    <label>Introduce una letra buscar</label><textarea id="letra"></textarea>
+    <input type="button" onclick="ejecutar()" value="Ejecutar codigo" />
+
+    <script>
+        function ejecutar() {
+            console.clear()
+            //buscar la longitud de la cadena con la propiedad .length
+            miCadena = document.getElementById("cadena").value
+            miLetra =  document.getElementById("letra").value
+            long = miCadena.length
+            //crear la variable para la posicion e igualarla a 0
+            posicion = 0
+            encortre_letra = true
+            pos_letra = -1
+
+            do {
+                //Recorrer la cadena posición a posición
+                console.log("La letra en le posicion:",posicion , "; es:", miCadena[posicion])
+                //Por cada posición comparar si la letra coincide
+                if ( miCadena[posicion] == miLetra ){
+                    encortre_letra = true
+                    //¿Donde guardo la posición?
+                    pos_letra = posicion
+                }
+                //Al final de cada acción voy a la posición siguiente
+                posicion ++
+            } while ( posicion < long && encortre_letra == false )
+            //Final del programa
+            if (encortre_letra){
+                alert ("Encontré la letra en la posicion: " + pos_letra)
+            }
+            else{
+                alert ("No encontré la letra")
+            }
+        }
+
+    </script>
+</body>
+
+</html>
