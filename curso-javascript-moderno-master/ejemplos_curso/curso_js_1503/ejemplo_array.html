@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo arrays</title>
+</head>
+
+<body>
+    <h1>Ejemplo  arrays</h1>
+    <input type="button" onclick="ejecutar()" value="Ejecutar codigo" />
+    <script>
+        function ejecutar() {
+            mi_array = ['perro',12,true,[12,45,23,45,79],['perro','gato','canario']] 
+            //mostrar por consola ( console.log) los tipos de datos (typeof)
+            // de cada elemento de nivel 1 
+            //mi_array[]
+            console.log("El array al empezar es: " + mi_array)
+            longitud_array = mi_array.length
+            for (let contador = 0; contador <  longitud_array; contador ++){
+                tipo_dato = typeof(mi_array[contador])
+                console.log("El tipo de dato para el elemento,"+contador + " , es" +tipo_dato)
+                switch(tipo_dato) {
+                case "string":
+                    //Si el tipo es string , conatenar un * a la cadena
+                    mi_array[contador] = mi_array[contador] + "*"
+                    break
+                case "number":
+                    //Si el tipo es numerico sumar 4
+                    mi_array[contador] += 4
+                    break
+                case "object":
+                    //Si es un objeto ( tipo complejo) preguntar si es un array
+                    //Array.isArray(meses)
+                    //if (Array.isArray(mi_array[contador])){
+                    if ((mi_array[contador]).isArray()){
+                        console.log("El objeto en la posición,"+ contador + ", es un array")
+                    }else{
+                        console.log("El objeto en la posición,"+ contador + ", no es un array")
+                    }
+                    break
+                case "boolean":
+                    //si el tipo es boolean poner el valor contrario
+                    // e  = !b ( esto se lee e = a lo contrario de b)
+                    // el signo de admiracion significa lo contrario
+                    // b = false ------> a true
+                    // No nos liemos 
+                    // != en un if  significa distinto
+                    // == en if significa igual
+                    mi_array[contador]  =  !mi_array[contador]
+                    break
+                default:
+                    alert ("tipo de dato desconocido")
+                }
+            }
+            console.log("El array al finalizar es: " + mi_array)
+        }
+    </script>
+</body>
+</html>
