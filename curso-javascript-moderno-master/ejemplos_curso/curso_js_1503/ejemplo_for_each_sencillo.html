@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo arrays</title>
+</head>
+
+<body>
+    <h1>Ejemplo  arrays</h1>
+    <input type="button" onclick="ejecutar()" value="Ejecutar codigo" />
+    <script>
+        function ejecutar() {
+            array = ["perro","gato","canario","camello","elefante","politico"]
+            resultado = ""
+            array.forEach((elemento, posicion) => {
+            //concatenar los elementos del array en un string unico
+                /*let resultado = elemento
+                console.log("Resultado con let:"+resultado)
+                this.resultado = this.resultado + elemento*/
+                resultado = resultado + elemento
+            })
+            console.log(resultado)
+        }
+    </script>
+</body>
+</html>

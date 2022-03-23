@@ -7,12 +7,18 @@ functionScope = () => {
     var a = 'A';
     let b = 'B';
     const c = 'C';
-    console.log("Valor global" + this.a);
+    console.log("Valor global:" + this.a);
     this.a = 'modificado';
-    console.log("Valor local" +  a);
+    console.log("Valor local:" +  a);
     console.log(`FUNCION: ${a} ${b} ${c}`);
+    console.log("GLOBAL dentro:" + this.a + " " + this.b +" " + this.c);
 }
-
+function micasa()
+{
+    var a = "gfdyigsuduph"
+    console.log("Valor local entre llaves:" +  a);
+}
+micasa();
 functionScope();
 console.log(`GLOBAL 0: ${a} ${b} ${c}`);
 

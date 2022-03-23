@@ -19,6 +19,7 @@ console.log(document.getElementById('encabezado').innerText);
 //Vamos a cambiar el CSS y cambiando textos
 encabezado = document.getElementById('encabezado');
 encabezado.style.background = '#333';
+document.getElementById('encabezado').style.background = '#333';
 encabezado.style.color = '#555A85';
 encabezado.style.padding = '20px';
 encabezado.textContent = 'Los mejores cursos';
