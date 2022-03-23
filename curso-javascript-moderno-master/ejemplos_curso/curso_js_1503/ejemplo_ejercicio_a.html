@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio A</title>
+</head>
+
+<body>
+    <h1>Ejercicio A</h1>
+    <label>Valor maximo </label><input type="text" id = "num">
+    <input type="button" onclick="ejecutar_0()" value="Ejecutar codigo version 0" />
+    <input type="button" onclick="ejecutar_1()" value="Ejecutar codigo  version 1" />
+    <script>
+        /*
+            //Leer un array declarado en el codigo ( a nivel de js)
+            //Pedir un número por pantalla
+            //Si el numero existe en el array por consola escribir la posicion
+
+            //Nivel por si acabas
+            //Si no existe añadir el numero al final del array
+
+            Agregar/remover ítems
+            Ya conocemos algunos métodos que agregan o extraen elementos del inicio o final de un array:
+
+            arr.push(...items) – agrega ítems al final,
+            arr.pop() – extrae un ítem del final,
+            arr.shift() – extrae un ítem del inicio,
+            arr.unshift(...items) – agrega ítems al principio.
+            Veamos algunos métodos más
+        */
+        function ejecutar_1() {
+            array = [45,22,10,7,4,2,78,3,6]
+            //Leemos el número
+            console.log("Array al principio:" + array )
+            num= parseInt(document.getElementById("num").value)
+            if ( array.indexOf(num) == -1  ){
+                array.push(num)
+            }
+            else{
+                console.log("el elemento lo hemos encontrado:" + array.indexOf(num))
+            }
+            console.log("Array al final:" + array )
+            
+        }
+        /*version 0*/
+        function buscar_en_array(array,num_a_buscar){
+            retorno = -1
+            array.forEach((elemento, posicion) => {
+                //Si el numero esta mostrar la posición
+                //y salir del bucle!!!!
+                if (num_a_buscar == elemento){
+                    console.log("Lo has encontrado en la posicion:"+posicion)
+                    retorno =  posicion
+                }
+            })
+            return retorno
+        }
+        function ejecutar_0() {
+            array = [45,22,10,7,4,2,78,3,6]
+            //Leemos el número
+            console.log("Array al principio:" + array )
+            num= parseInt(document.getElementById("num").value)
+            if ( buscar_en_array(array,num) == -1  ){
+                array.push(num)
+            }
+            else{
+                console.log("el elemento lo hemos encontrado:" + array.indexOf(num))
+            }
+            console.log("Array al final:" + array )
+            
+        }
+    </script>
+</body>
+</html>
+
