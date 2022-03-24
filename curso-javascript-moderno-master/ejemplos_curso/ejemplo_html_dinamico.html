@@ -7,37 +7,46 @@
     <title>Ejemplo 5 : Generar número pares</title>
 </head>
 <body id = "cuerpo">
+
     <label id ="ltext">Introduce el elemento </label><input type="text" id = "num">
-   
     
+
     <script >
-        labelref = document.getElementById("ltext")
-        //Apuinto al padre
-        padre = document.getElementById("cuerpo")
         //Añadir un titulo al padre
         titulo = document.createElement("h1")
         textoH1 = document.createTextNode("Yo soy el título")
         titulo.appendChild(textoH1)
-        array = [45,22,10,7,4,2,78,3,6]
+        pp = document.createElement("p")
+        textop = document.createTextNode("Yo soy el texto de p")
+        pp.appendChild(textop)
+        //buscamos la referencia para seber donde poner el título
+        labelref = document.getElementById("ltext")
+        //Apuinto al padre
+        body = document.getElementById("cuerpo")
+        
+        
+        body.appendChild(pp)
+        array = [45,22,667.66666,999999]
+        
         //Creo el contenedor principal
         contenedorDiv  = document.createElement("div")
-
+        
         array.forEach((elemento, posicion) => {
                 //por cada elemento añado un label
                 milabel = document.createElement("label")
                 milabel.setAttribute("id", elemento)
-                if (elemento == document.getElementById("num").value){
+                /*if (elemento == document.getElementById("num").value){
                     milabel.setAttribute("color","#f44336")
-                }
-                mibr =  document.createElement("br")
+                }*/
                 textoLabel = document.createTextNode(elemento)
                 milabel.appendChild(textoLabel)
+                mibr =  document.createElement("br")
                 contenedorDiv.appendChild(milabel)
                 contenedorDiv.appendChild(mibr)
             })
-       padre.insertBefore(titulo,labelref)
-       padre.appendChild(contenedorDiv)
-
+        body.appendChild(contenedorDiv)
+        body.insertBefore(titulo,labelref)
+            
     </script>
 </body>
 </html>
