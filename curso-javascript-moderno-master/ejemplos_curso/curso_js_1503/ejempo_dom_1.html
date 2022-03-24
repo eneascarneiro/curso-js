@@ -1,18 +1,39 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejemplo 5 : Generar número pares</title>
+</head>
+
 <body>
-  <div>Begin</div>
+  <div>
 
-  <ul>
-    <li>Information</li>
+    <h1>Soy la cabecera</h1>
+    
+  </div>
+  <ul id ="milista">
   </ul>
-
   <div>End</div>
-
   <script>
     for (let i = 0; i < document.body.childNodes.length; i++) {
-      console.log( document.body.childNodes[i] ); // Texto, DIV, Texto, UL, ..., SCRIPT
+      console.log("Estoy en la posicion:" + i )
+      console.log( document.body.childNodes[i] ); 
+      
+    }
+    miPalabra ="estonomelocreo"
+    //Busco la caja en la que añadir
+    micaja = document.getElementById("milista")
+    for(let posicion = 0;posicion < miPalabra.length; posicion++ ){
+      //Creamos la etiqueta li, crear no significa añadir
+      miLista = document.createElement("li")
+      //Añado la letra a mi lista
+      letra = document.createTextNode(miPalabra[posicion])
+      miLista.appendChild(letra)
+      //Añadimos la lista a la caja
+      micaja.appendChild(miLista)
     }
   </script>
-  
 </body>
 </html>

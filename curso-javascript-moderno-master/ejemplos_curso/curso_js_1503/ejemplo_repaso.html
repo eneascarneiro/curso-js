@@ -12,36 +12,144 @@
     <br>
     <label>Introduce el segundo elemento </label><input type = "text" id="elemento2"/>
     <br>
+    <input type="button" onclick="basico()" value="Ejecutar basico" />
     <input type="button" onclick="sumar()" value="Ejecutar suma" />
     <input type="button" onclick="restar()" value="Ejecutar resta" />
     <input type="button" onclick="dividir()" value="Ejecutar division" />
     <input type="button" onclick="multiplicar()" value="Ejecutar multiplicar" />
     <input type="button" onclick="concatenar()" value="Ejecutar concatenar" />
     <input type="button" onclick="recorrer_un_string()" value="Ejecutar recorrer_un_string" />
+    <input type="button" onclick="recorrer_un_string_buscando_una_letra()"  value="Ejecutar recorrer_un_string_buscando_una_letra" />
+    <input type="button" onclick="chiste()" value="Ejecutar chiste" />
     <script >
+        function basico(){
+             //Una variable es una palabra que para recibir contenido se pone a la izquierda de un "="
+            h = 1
+            ff = 2 +3 
+            texto = 2 + 3
+            //Leer
+            elemento1 = parseFloat(document.getElementById("elemento1").value)
+            elemento2 = parseFloat(document.getElementById("elemento2").value)
+            gg____H = elemento1 + elemento2
+            console.log("Es lo mismo valor:" + gg____H)
+            console.log("Es la suma:" + (elemento1 + elemento2) )
+        }
         function sumar(){
             //Leer
-            elemento1 = document.getElementById("elemento1").value
-            elemento2 = document.getElementById("elemento2").value
-            
+            elemento1 = parseFloat(document.getElementById("elemento1").value)
+            elemento2 = parseFloat(document.getElementById("elemento2").value)
+            resultado = elemento1 + elemento2
             //Escribir 
-            console.log("Aqui escribo")
+            console.log("Aqui escribo el resultado:" + resultado)
         }
         function restar(){
+            //Leer
+            elemento1 = parseFloat(document.getElementById("elemento1").value)
+            elemento2 = parseFloat(document.getElementById("elemento2").value)
+            resultado = elemento1 - elemento2
+            //Escribir 
+            console.log("Aqui escribo el resultado:" + resultado)
             
         }
         function dividir(){
-            
+            //Leer
+            elemento1 = parseFloat(document.getElementById("elemento1").value)
+            elemento2 = parseFloat(document.getElementById("elemento2").value)
+            resultado = elemento1 / elemento2
+            //Escribir 
+            console.log("Aqui escribo el resultado:" + resultado)
         }
         function multiplicar(){
+            //Leer
+            elemento1 = parseFloat(document.getElementById("elemento1").value)
+            elemento2 = parseFloat(document.getElementById("elemento2").value)
+            resultado = elemento1 * elemento2
+            //Escribir 
+            console.log("Aqui escribo el resultado:" + resultado)
             
         }
         function concatenar(){
+            //Leer
+            elemento1 = document.getElementById("elemento1").value
+            elemento2 = document.getElementById("elemento2").value
+            resultado = elemento1 + elemento2
+            //Escribir 
+            console.log("Aqui escribo el resultado:" + resultado)
             
         }
         function recorrer_un_string(){
+            //For ascendente
+            for(posicion = 0 ;posicion <= 20 ; posicion++ ){
+                console.log("ascendente:En la posicion:" + posicion )
+            }
+            //For ascendente
+            for(posicion = 0 ;posicion <= 20 ; posicion+=2 ){
+            console.log("ascendente de dos en dos:En la posicion:" + posicion )
+            }
+            //For descendente
+            for(posicion = 20 ;posicion >= 0 ; posicion-- ){
+            console.log("descendente:En la posicion:" + posicion )
+            }
+            elemento1 = document.getElementById("elemento1").value
+            for(posicion = 0;posicion < elemento1.length; posicion++ ){
+                console.log("En la posicion:" + posicion + ", esta el caracter :" + elemento1[posicion] )
+            }
+            //Recorrer elmento 2 en sentido inverso
+            elemento2 = document.getElementById("elemento2").value
+            for(posicion = elemento2.length -1 ;posicion >= 0 ; posicion-- ){
+                console.log("En la posicion:" + posicion + ", esta el caracter :" + elemento2[posicion] )
+            }
 
         }
+        function recorrer_un_string_buscando_una_letra(){
+            //Leer
+            mi_string = document.getElementById("elemento1").value
+            letra = document.getElementById("elemento2").value
+            //Mostrar por consola la posicion de la letra sin bucle
+            //pos_letra = mi_string.indexOf(letra)
+            pos = lastindexOf(mi_string,letra )
+            //pos = mi_string.indexOf(letra)
+            if (pos != -1){
+                console.log("la letra esta en la po:" + pos )
+            }
+            else {
+                console.log("la letra no esta ")
+            }
+            //Mostrar por consola la posicion de la letra con bucle
+
+        }
+        function firstindexOf(str_entrada, letra_a_buscar){
+            pos_letra = -1
+            //Recorrer el string
+            for(let posicion = 0;posicion < str_entrada.length; posicion++ ){
+                if (letra_a_buscar == str_entrada[posicion] ){
+                    pos_letra = posicion
+                    //Si encotramos la primera , engañamos al for
+                    //le decimos que contó hasta el final
+                    posicion = str_entrada.length
+                }
+            }
+            return pos_letra
+          }
+          function lastindexOf(str_entrada, letra_a_buscar){
+            pos_letra = -1
+            //Recorrer el string
+            for(let posicion = 0;posicion < str_entrada.length; posicion++ ){
+                if (letra_a_buscar == str_entrada[posicion] ){
+                    pos_letra = posicion
+                }
+            }
+            return pos_letra
+          }
+        //arrays
+
+        // ¿por que en programación dos + 2 son 7?
+        function chiste(){
+            dos = 5
+            console.log( dos +2)
+        }
+
+
     </script>
 </body>
 </html>
