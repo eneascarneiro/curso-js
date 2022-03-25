@@ -115,188 +115,79 @@
 
 
 
+
   <script>
     function modificar_lista_cadena(){
       //Leemos el texto usar document.getElementById
-      miPalabra = document.getElementById("elemento1").value
+      
       //Busco la caja en la que añadir usar document.getElementById
-      micaja = document.getElementById("milista")
+      
       for(let posicion = 0;posicion < miPalabra.length; posicion++ ){
         //Creamos la etiqueta li, crear no significa añadir
-        miLista = document.createElement("li")
+        
         //Añado la letra a mi lista
-        letra = document.createTextNode(miPalabra[posicion])
-        miLista.appendChild(letra)
+        
+      
         //Añadimos la lista a la caja
-        micaja.appendChild(miLista)
+       
       }
       document.getElementById("cabeceralista").innerHTML = "Lista modificada añadiendo letras"
 
     }
     function modificar_lista_array(){
       //Leemos el texto usar document.getElementById
-      textoArray = document.getElementById("elemento_arr").value
+     
       //Obtenemps el array usar split
-      miArray =  textoArray.split(",")
+    
       //Busco la caja en la que añadir usar document.getElementById
-      micaja = document.getElementById("milista")
-      for(let posicion = 0;posicion < miArray.length; posicion++ ){
+     
+      //for(let posicion = 0;posicion < miArray.length; posicion++ ){
         //Creamos la etiqueta li, crear no significa añadir
-        miLista = document.createElement("li")
+       
         //Añado el elemento  a mi lista
-        elementoArray = document.createTextNode(miArray[posicion])
-        miLista.appendChild(elementoArray)
+        
         //Añadimos la lista a la caja
-        micaja.appendChild(miLista)
+        
       }
       document.getElementById("cabeceralista").innerHTML = "Lista modificada añadiendo elementos del array"
     }
     function modificar_lista_array_separador(){
       //Leemos el texto usar document.getElementById
-      textoArray = document.getElementById("elemento_arr_sep").value
+      
       //Leemos el separador usar document.getElementById
-      sep = document.getElementById("separador").value
+      
       //Obtenemps el array usar split
-      miArray =  textoArray.split(sep)
+      
       //Busco la caja en la que añadir usar document.getElementById
-      micaja = document.getElementById("milista")
+      
       for(let posicion = 0;posicion < miArray.length; posicion++ ){
         //Creamos la etiqueta li, crear no significa añadir
-        miLista = document.createElement("li")
+       
         //Añado el elemento  a mi lista
-        elementoArray = document.createTextNode(miArray[posicion])
-        miLista.appendChild(elementoArray)
+        
         //Añadimos la lista a la caja
-        micaja.appendChild(miLista)
+        
       }
-      document.getElementById("cabeceralista").innerHTML = "Lista modificada añadiendo elementos del array"
+      document.getElementById("cabeceralista").innerHTML = "Lista modificada añadiendo elementos del array con separador"
     }
     function modificar_lista_array_num(){
       //Leemos el texto usar document.getElementById
-      textoArray = document.getElementById("elemento_arr_num").value
+      
       //Obtenemps el array usar split
-      miArray =  textoArray.split(",")
+     
       //Busco la caja en la que añadir usar document.getElementById
-      micaja = document.getElementById("milista")
+      
       for(let posicion = 0;posicion < miArray.length; posicion++ ){
         //Creamos la etiqueta li, crear no significa añadir
-        miLista = document.createElement("li")
+       
         //Añado el elemento  a mi lista
-        resultado_operacion =  parseFloat(miArray[posicion]) + posicion
-        elementoArray = document.createTextNode(resultado_operacion)
-        miLista.appendChild(elementoArray)
+        
+        
         //Añadimos la lista a la caja
-        micaja.appendChild(miLista)
+       
       }
       document.getElementById("cabeceralista").innerHTML = "Lista modificada añadiendo elementos del array con operacion"
     }
-    function modificar_div_con_json(){
-      //Definicion de un array complejo (json)
-      /*
-            JSON (acrónimo de Object Notation, 'notación de objeto de JavaScript') es un formato de texto sencillo para el intercambio de datos. 
-            Se trata de un subconjunto de la notación literal de objetos de JavaScript, aunque, debido a su amplia adopción como alternativa a XML, se considera (año 2019) un formato independiente del lenguaje.
-
-            Una de las supuestas ventajas de JSON es que en el 2022 ya no es desarrollador sobre XML como formato de intercambio de datos es que resulta mucho más sencillo escribir un analizador sintáctico (parser) para él. 
-            En JavaScript, un texto JSON se puede analizar fácilmente usando la función eval(), algo que (debido a la ubicuidad de JavaScript en casi cualquier navegador web) ha sido fundamental para que haya sido aceptado 
-            por parte de la comunidad de desarrolladores AJAX.
-
-            En la práctica, los argumentos a favor de la facilidad de desarrollo de analizadores o de sus rendimientos son poco relevantes, debido a las cuestiones de seguridad que plantea el uso de eval() y
-             el auge del procesamiento nativo de XML incorporado en los navegadores modernos. Por esa razón, JSON se emplea habitualmente en entornos donde el tamaño del flujo de datos entre cliente y 
-             servidor es de vital importancia (de aquí su uso por Yahoo!, Google, Mozilla, etc, que atienden a millones de usuarios) cuando la fuente de datos es explícitamente de fiar y donde no es importante
-              el hecho de no disponer de procesamiento XSLT para manipular los datos en el cliente.
-
-            Si bien se tiende a considerar JSON como una alternativa a XML, lo cierto es que no es infrecuente el uso de JSON y XML en la misma aplicación; así, una aplicación de cliente que integra datos de Google Maps 
-            con datos meteorológicos en SOAP (Simple Object Access Protocol) necesita hacer uso de ambos formatos.
-
-            En diciembre de 2005, Yahoo! comenzó a dar soporte opcional de JSON en algunos de sus servicios web.1​
-      */
-      var arrPersonas =[
-      {
-          nombre: 'Miguel',
-          apellido: 'Martinez',
-          profesion: 'Diseñador gráfico',
-          email: 'mail@mail.com',
-          edad: 20,
-          musica: ['rock', 'metal', 'grunge'],
-          hogar: {
-              ciudad: {
-                      nombreCiudad: 'Guadalajara',
-                      dirección: 'Via Luis 15',
-                      numero: 10
-                      },
-              pais: 'Mexico'
-          },
-          nacimiento: (edad) => {
-              return new Date().getFullYear() - edad;
-          }
-      },
-          {
-              nombre: 'Luisa',
-              apellido: 'Martinez',
-              profesion: 'Diseñador gráfico',
-              email: 'mail@mail.com',
-              edad: 20,
-              musica: ['rock', 'metal', 'grunge'],
-              hogar: {
-                  ciudad: {
-                          nombreCiudad: 'Guadalajara',
-                          dirección: 'Via Luis 15',
-                          numero: 10
-                          },
-                  pais: 'Mexico'
-              },
-              nacimiento: (edad) => {
-                  return new Date().getFullYear() - edad;
-              }
-          },
-              {
-                  nombre: 'Norberto',
-                  apellido: 'Martinez',
-                  profesion: 'Diseñador gráfico',
-                  email: 'mail@mail.com',
-                  edad: 20,
-                  musica: ['rock', 'metal', 'grunge'],
-                  hogar: {
-                      ciudad: {
-                              nombreCiudad: 'Guadalajara',
-                              dirección: 'Via Luis 15',
-                              numero: 10
-                              },
-                      pais: 'Mexico'
-                  },
-                  nacimiento: (edad) => {
-                      return new Date().getFullYear() - edad;
-                  }
-              }
-        ]
-        //Busco la caja en la que añadir usar document.getElementById
-        micaja = document.getElementById("personDiv")
-        arrPersonas.forEach((persona, index) => {
-          console.log("recorriendo el json")
-          //Por cada campo añado un label y una caja de texto
-          label_a_insertar = document.createElement("label")
-          salto_de_linea =  document.createElement("br")
-          //Creamos atributos para el label
-          label_a_insertar.setAttribute("style", "font-size: 20px;font-weight: 700;color: #1c87c9;border-color: black;  border-width: 4px;  border-style:solid");
-
-          label_text_node = document.createTextNode("nombre")
-          //Añado el texto al label
-          label_a_insertar.appendChild(label_text_node)
-          //Añado el label a mi caja
-          micaja.appendChild(label_a_insertar)
-          
-          //Añado la caja de texto
-          caja_de_texto = document.createElement("textarea")
-          textarea_text_node = document.createTextNode(persona.nombre )
-          caja_de_texto.appendChild(textarea_text_node)
-          micaja.appendChild(label_a_insertar)
-          micaja.appendChild(caja_de_texto)
-          micaja.appendChild(salto_de_linea)
-
-        })
-      }
-
-
   </script>
 </body>
 </html>
