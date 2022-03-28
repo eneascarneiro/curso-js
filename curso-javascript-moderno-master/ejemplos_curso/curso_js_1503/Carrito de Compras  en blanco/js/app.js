@@ -19,16 +19,18 @@ var arrayJsonCatalogo =  [
 ]
 //Aqui hay que generar 
 /*
-<div class="row">
-            <div class="four columns">
-                <div class="card">
-                    <img src="img/curso1.jpg" class="imagen-curso u-full-width">
-                    <div class="info-card">
-                        <h4>HTML5, CSS3, JavaScript para Principiantes</h4>
-                        <p>Juan Pedro</p>
-                        <img src="img/estrellas.png">
-                        <p class="precio">$200  <span class="u-pull-right ">$15</span></p>
-                        <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="1">Agregar Al Carrito</a>
+divN1 <div class="row">
+divN2            <div class="four columns">
+divN3                <div class="card">
+img1                    <img src="img/curso1.jpg" class="imagen-curso u-full-width">
+divN4                    <div class="info-card">
+h4                        <h4>HTML5, CSS3, JavaScript para Principiantes</h4>
+p1                        <p>Juan Pedro</p>
+img2                        <img src="img/estrellas.png">
+p2                        <p class="precio">$200  
+span1                                <span class="u-pull-right ">$15</span>
+                          </p>
+a1                        <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="1">Agregar Al Carrito</a>
                     </div>
                 </div> <!--.card-->
             </div>
@@ -44,5 +46,6 @@ arrayJsonCatalogo.forEach((curso, index) => {
     //divN2
     divN2 = document.createElement("div")
     divN2.setAttribute("class","four columns")
+    
 
 })
