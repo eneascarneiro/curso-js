@@ -4,6 +4,7 @@ var arrayJsonCatalogo =  [
         imagen1: 'img/curso1.jpg',
         h4: 'HTML5, CSS3, JavaScript para Principiantes',
         nombre: 'Luis Perez',
+        ciudad: 'Madrid',
         imagen2: 'img/estrellas.png',
         precio: 200,
         precio_descuento: 15
@@ -12,9 +13,30 @@ var arrayJsonCatalogo =  [
         imagen1: 'img/curso2.jpg',
         h4: 'Curso de Comida Vegetariana',
         nombre: 'Juan Perez',
+        ciudad: 'Cádiz',
         imagen2: 'img/estrellas.png',
-        precio: 200,
-        precio_descuento: 15
+        precio: 300,
+        precio_descuento: 25
+    }
+    ,
+    {
+        imagen1: 'img/curso3.jpg',
+        h4: 'Curso de Comida para gatos',
+        nombre: 'Angela Perez',
+        ciudad: 'Valencia',
+        imagen2: 'img/estrellas.png',
+        precio: 400,
+        precio_descuento: 200
+    }
+    ,
+    {
+        imagen1: 'img/curso3.jpg',
+        h4: 'Curso de Comida para elefantes',
+        nombre: 'Pepe Perez',
+        ciudad: 'Gibraltar',
+        imagen2: 'img/estrellas.png',
+        precio: 400,
+        precio_descuento: 200
     }
 ]
 //Aqui hay que generar 
@@ -30,6 +52,7 @@ img2                        <img src="img/estrellas.png">
 p2                        <p class="precio">$200  
 span1                                <span class="u-pull-right ">$15</span>
                           </p>
+                          <p> Ciudad </p>
 a1                        <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="1">Agregar Al Carrito</a>
                     </div>
                 </div> <!--.card-->
@@ -39,13 +62,78 @@ a1                        <a href="#" class="u-full-width button-primary button 
 //E incluirlo en lista-cursos
 //Busco la caja en la que añadir usar document.getElementById
 micaja = document.getElementById("lista-cursos")
+//Praparamos que no insertamos
+divN1 = document.createElement("div")
+divN1.setAttribute("class","row")
 arrayJsonCatalogo.forEach((curso, index) => {
-    //Praparamos que no insertamos
-    divN1 = document.createElement("div")
-    divN1.setAttribute("class","row")
+    //Hay un maximo de 3 elementos por fila
     //divN2
     divN2 = document.createElement("div")
     divN2.setAttribute("class","four columns")
-    
+    //divN3
+    divN3 = document.createElement("div");
+    divN3.setAttribute("class","card");
 
+    //divN4
+    divN4 = document.createElement("div");
+    divN4.setAttribute("class","info-card");
+
+    //img1
+    img1 = document.createElement("img");
+    img1.setAttribute("src", curso.imagen1);
+    img1.setAttribute("class", "imagen-curso u-full-width");
+
+    //H4
+    titulo4 = document.createElement("H4");
+    texto_t4 = document.createTextNode(curso.h4);
+    titulo4.appendChild(texto_t4);  // El texto es un nodo, se crea el elemento padre
+
+    //p1
+    p1 = document.createElement("p");
+    texto_p1 = document.createTextNode(curso.nombre)
+    p1.appendChild(texto_p1);  // El texto es un nodo, se crea el elemento padre
+
+    //img2
+    img2 = document.createElement("img");
+    img2.setAttribute("src", curso.imagen2);
+
+    //p2
+    p2 = document.createElement("p");
+    p2.setAttribute("class","precio");
+    texto_p2 = document.createTextNode("$" + curso.precio);
+    p2.appendChild(texto_p2);  // El texto es un nodo, se crea el elemento padre
+
+    //span1
+    span1 = document.createElement("span");
+    span1.setAttribute("class","u-pull-right");
+    texto_span1 = document.createTextNode("$" + curso.precio_descuento);
+    span1.appendChild(texto_span1);   // El texto es un nodo, se crea el elemento padre
+
+    //a1
+    a1 = document.createElement("a");
+    a1.setAttribute("href","#");
+    a1.setAttribute("class","u-full-width button-primary button input agregar-carrito");
+    a1.setAttribute("data-id","1");
+    texto_a1 = document.createTextNode("Agregar Al Carrito");
+    a1.appendChild(texto_a1)
+
+    // Añado los elementos al HTML
+    // Empiezamos desde el último elemento
+    // Añado span1 a p2
+    p2.appendChild(span1);
+    // Añado div4
+    divN4.appendChild(titulo4);
+    divN4.appendChild(p1);
+    divN4.appendChild(img2);
+    divN4.appendChild(p2);
+    divN4.appendChild(a1);
+    // Añado div3
+    divN3.appendChild(img1);
+    divN3.appendChild(divN4);
+    // Añado div2
+    divN2.appendChild(divN3);
+    // Añado div1
+    divN1.appendChild(divN2);
 })
+    // Añado micaja
+    micaja.appendChild(divN1);
