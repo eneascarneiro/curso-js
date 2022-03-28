@@ -1,0 +1,35 @@
+bola.equipo
+bola.ciudad
+bola.jugadores.nombre
+[
+    {
+        "equipo": "Real madrid",
+        "ciudad": "Madrid",
+        "jugadores": [
+            {
+                "numero":"11",
+                "nombre":"luis"
+            },
+            {
+                "numero":"10",
+                "nombre":"pepe"
+            }
+        ]
+    },
+    {
+        "equipo": "Real sociedad"
+        ,
+        "ciudad": "San Sebastian"
+    }
+    ,
+    {
+        "equipo": "Barcelona"
+        ,
+        "ciudad": "Barcelona"
+    }
+    ,
+    {
+        "equipo": "Atletico",
+        "ciudad": "Madrid"
+    } 
+]
