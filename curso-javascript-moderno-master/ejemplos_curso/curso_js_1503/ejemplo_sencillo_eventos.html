@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hola mundo</title>
+    </head>
+    <body>
+        <button onclick="clickraton()">Prueba click</button>
+        <button onmouseover="onmouseoverraton()">Mueve el raton por encima</button>
+        <textarea id ="mitexto" onchange="textomodificado()"></textarea>
+        <script>
+            function clickraton(){
+                alert('has hecho click')
+            }
+            function onmouseoverraton(){
+                alert('has movido el raton')
+            }
+            function textomodificado(){
+                alert("Has modificado el texto:" + document.getElementById("mitexto").value )
+                
+            }
+        </script>
+    </body>
+</html>
