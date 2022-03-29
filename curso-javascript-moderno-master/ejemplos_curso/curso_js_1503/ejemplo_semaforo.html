@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Semáforo</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+    <h2>JavaScript addEventListener()</h2>
+    <p>This example uses the addEventListener() method to attach a click event to a button.</p>
+    <button id="myBtn">Se puede pasar</button>
+    <button id="myBtn1">Terminando el paso</button>
+    <button id="myBtn2">No se puede pasar</button>
+    <button id="myBtn3">Aleatorio</button>
+    <h1><span id="circuloSup" class="red">.</span></h1>
+    <h1><span id="circuloMed" class="amarillo">.</span></h1>
+
+    <h1><span id="circuloInf" class="green">.</span></h1>
+    <script>
+        document.getElementById("myBtn").addEventListener("click", pasar);
+        document.getElementById("myBtn1").addEventListener("click", correr);
+        document.getElementById("myBtn2").addEventListener("click", esperar);
+        document.getElementById("myBtn3").addEventListener("click", aleatorio);
+        function pasar() {
+            document.getElementById("circuloSup").setAttribute("class","grey")
+            document.getElementById("circuloMed").setAttribute("class","grey")
+            document.getElementById("circuloInf").setAttribute("class","green")
+        }
+        function correr() {
+            document.getElementById("circuloSup").setAttribute("class","grey")
+            document.getElementById("circuloMed").setAttribute("class","amarillo")
+            document.getElementById("circuloInf").setAttribute("class","grey")
+        }
+        function esperar() {
+            document.getElementById("circuloSup").setAttribute("class","red")
+            document.getElementById("circuloMed").setAttribute("class","grey")
+            document.getElementById("circuloInf").setAttribute("class","grey")
+            
+        }
+        function aleatorio() {
+            //Array de colores
+            arrayColores = ["red","grey","amarillo","green"]
+            //Generar un num aleatorio entre 1 y 4 
+
+            document.getElementById("circuloSup").setAttribute("class",arrayColores[getRandomInt(1,5)-1])
+            document.getElementById("circuloMed").setAttribute("class",arrayColores[getRandomInt(1,5)-1])
+            document.getElementById("circuloInf").setAttribute("class",arrayColores[getRandomInt(1,5)-1])
+            
+        }
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+    </script>
+</body>
+
+</html>

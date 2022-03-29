@@ -65,7 +65,16 @@ micaja = document.getElementById("lista-cursos")
 //Praparamos que no insertamos
 divN1 = document.createElement("div")
 divN1.setAttribute("class","row")
+man_num_col_row =  3
+num_col = 1
 arrayJsonCatalogo.forEach((curso, index) => {
+    //¿En que columna estoy?
+    //Si estoy en el primer elemento tengo que crear la fila
+    if (num_col == 1){
+        //Praparamos que no insertamos
+        divN1 = document.createElement("div")
+        divN1.setAttribute("class","row")
+    }
     //Hay un maximo de 3 elementos por fila
     //divN2
     divN2 = document.createElement("div")
@@ -113,7 +122,7 @@ arrayJsonCatalogo.forEach((curso, index) => {
     a1 = document.createElement("a");
     a1.setAttribute("href","#");
     a1.setAttribute("class","u-full-width button-primary button input agregar-carrito");
-    a1.setAttribute("data-id","1");
+    a1.setAttribute("data-id",index);
     texto_a1 = document.createTextNode("Agregar Al Carrito");
     a1.appendChild(texto_a1)
 
@@ -134,6 +143,43 @@ arrayJsonCatalogo.forEach((curso, index) => {
     divN2.appendChild(divN3);
     // Añado div1
     divN1.appendChild(divN2);
+    if (num_col == man_num_col_row){
+        //Si estoy en la última columna escribo en la caja y vuelvo a la 
+        //primera columna
+        micaja.appendChild(divN1);
+        num_col = 1
+    } else{
+        num_col ++
+    }
 })
     // Añado micaja
     micaja.appendChild(divN1);
+//Aqui comienza la gestión de eventos
+//Defino las variables(mandos a distancia ) para manejar los elementos de la página
+
+//LISTENERS
+PonerEnMarchaEventListeners();
+
+//Aqui ponemos las funciones
+function PonerEnMarchaEventListeners(){
+    //Por cada vez que hagamos click en lista-cursos quiero ejecutar una función
+    micaja.addEventListener("click",comprarcurso)
+}
+
+//Funcion para comprar un curso
+function comprarcurso(ev){
+    alert("Has intentado comprar un curso" )
+    //Previene cualquier acción por defecto
+    ev.preventDefault();
+    //Delegation para agregar-carrito 
+    //target es el "objetivo" el elmento en el que hice click
+    if(ev.target.classList.contains('agregar-carrito')) {
+        alert("El click es válido" )
+        console.log(ev.target)
+        console.log("Este es mi padre:" + ev.target.parentElement)
+    }
+}
+function nombreAnimal(animal){
+    alert(animal)
+    console.log(ev.target)
+}

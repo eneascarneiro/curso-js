@@ -1,5 +1,6 @@
 //Query Selector puede seleccionar ids, clases, etc
 const encabezado = document.querySelector('#encabezado');
+//const encabezado = document.getElementById('encabezado');
 
 console.log(encabezado);
 
