@@ -164,6 +164,7 @@ PonerEnMarchaEventListeners();
 function PonerEnMarchaEventListeners(){
     //Por cada vez que hagamos click en lista-cursos quiero ejecutar una función
     micaja.addEventListener("click",comprarcurso)
+    //micaja.addEventListener("click",() =>nombreAnimal("perro") )
 }
 
 //Funcion para comprar un curso
@@ -176,7 +177,21 @@ function comprarcurso(ev){
     if(ev.target.classList.contains('agregar-carrito')) {
         alert("El click es válido" )
         console.log(ev.target)
-        console.log("Este es mi padre:" + ev.target.parentElement)
+        //Tengo que saltar desde la etiqueta <a> hasta divN3
+        //Subimos en la jerarquía de html
+        //Para posteriormente volver a bajar leyendo
+        puntoDePartidaDeLectura = ev.target.parentElement.parentElement
+        //Leer la primera imagen
+        primeraImagen = puntoDePartidaDeLectura.querySelector("img")
+        console.log("El src de la imagen es:" + primeraImagen.getAttribute("src"))
+        //Generar la parte a insertar en tbody del id lista-carrito
+        //Hay que generar una estructura
+        //<tr>
+        // 3 elementos <td>.....</td>
+        //</tr>
+
+
+        
     }
 }
 function nombreAnimal(animal){
