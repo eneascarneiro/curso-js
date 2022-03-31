@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/eneascarneiro/curso-js#readme",
   "dependencies": {
-    "docenv": "^2.0.6"
+    "docenv": "^2.0.6",
+    "firebase": "^9.6.10"
   }
 }
