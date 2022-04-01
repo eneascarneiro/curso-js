@@ -6,6 +6,7 @@ document.getElementById("txt1").value = diaHoy;
 
 //Fecha en especifico
 let navidad2017 = new Date('12-25-2017');
+let navidad2017 = new Date('12:25:2017');
 
 console.log(navidad2017);
 

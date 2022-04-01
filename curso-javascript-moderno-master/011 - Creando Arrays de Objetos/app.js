@@ -13,7 +13,7 @@ const autos = [
         motor: 6.2
     }
 ];
-
+autos[0].modelo.length
 //Para verlos todos
 console.log(autos);
 
@@ -104,3 +104,8 @@ for( i = 0; i < arrPersonas.length; i++) {
         console.log(arrPersonas[i].musica[j]);
     }
 }
+
+arrPersonas.forEach((persona,index) =>{
+    console.log(persona.hogar.ciudad.nombreCiudad);
+
+})

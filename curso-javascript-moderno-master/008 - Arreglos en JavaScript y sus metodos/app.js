@@ -1,6 +1,13 @@
 //Crear un array
 const numeros = [10, 20, 30, 40, 50];
 mi_array = ['perro',12,true,[12,45,23,45,79],['perro','gato','canario']] 
+mi_array[0]
+mi_array[2]
+mi_array[3][1]
+mi_array[4][0][2]
+mi_array[4].length
+mi_array[4][1].length
+
 var animal = "perro"
 /*
 animal[0]  -> 'p'
@@ -67,6 +74,7 @@ let arr1 = [1,2,3];
 let arr2 = [4,5,6];
 
 console.log(arr1.concat(arr2));
+[1,2,3,4,5,6]
 
 //Ordenar un array con letras
 const frutas = ['Platano', 'Manzana', 'Fresa', 'Naranja'];

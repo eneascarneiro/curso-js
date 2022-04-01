@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo arrays</title>
+
+</head>
+
+<body onload="window._funcs.ConectarFirebase()">
+    <h1>Ejemplo  firebase</h1>
+    <div class="three columns userpassw" >
+        <label class ="labell">Usuario</label><input type="text" class = "textlogin" id="usuario">
+        <label class ="labell">Password</label><input type="password" class = "textlogin" id="password">
+    </div>
+    <div class="two columns loginbtn" >
+        <button type="submit" id="login" class="btn" onclick="window._funcs.LoginUsuario()" >Log in</button>
+        <button type="submit" id="logout" class="btn" onclick="window._funcs.Logout()" >Log out</button>
+    </div>            
+    <script type="module">
+        import {ConectarFirebase,LoginUsuario,Logout} from "./js/firebase.js";
+        window._funcs = {LoginUsuario,ConectarFirebase,Logout}
+    </script>
+</body>
+</html>

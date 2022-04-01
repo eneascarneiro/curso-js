@@ -24,5 +24,5 @@ function accion3(){
     //Al ser un number no nos puede devolver el length
     return String(cp).length
 }
-
+milista = []
 

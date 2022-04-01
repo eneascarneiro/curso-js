@@ -3,6 +3,7 @@
 //funcion que no existe
 try {
     algo();
+    
 } catch(error) {
     console.log(error);
 } finally {
